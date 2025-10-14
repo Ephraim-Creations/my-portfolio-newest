@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portfolio | Ephraim Works</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/portfolio.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+        <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+    <!-- Header (reused from home) -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-img">
+                    <img src="/images/favicon.png" alt="Ephraim Works Logo">
+                </div>
+                <div class="logo-text">Ephraim M <span>Works</span></div>
+            </a>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/" class="active">About</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/eBooks/">eBooks</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book-online/" class="cta-button">Start Project</a></li>
+            </ul>
+        </div>
+    </header>
+
+<!-- Portfolio Hero Section -->
+<section class="portfolio-hero">
+    <div class="container">
+        <div class="portfolio-hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Strategic <span>Digital Solutions</span> That Drive Results</h1>
+            <p>A curated collection of projects showcasing innovative design, robust development, and measurable business impact across various industries and technologies.</p>
+            <div class="portfolio-stats">
+                <div class="stat" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Repeat Clients</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Filter Section -->
+<section class="portfolio-filter">
+    <div class="container">
+        <div class="filter-buttons" data-aos="fade-up" data-aos-duration="800">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+  <!--         <button class="filter-btn" data-filter="mobile">Mobile Apps</button>--> 
+            <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="featured-projects">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+            <h2>Featured Projects</h2>
+            <p>Showcasing innovative solutions that delivered exceptional results</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card featured" data-aos="fade-up" data-aos-duration="800" data-category="ecommerce">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="/images/gadget-store.jpg" alt="Enterprise E-Commerce Platform">
+                </div>
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="project-category">Web Development</span>
+                        <span class="project-year">2025</span>
+                    </div>
+                    <h3 class="project-title">Enterprise E-Commerce Platform</h3>
+                    <p class="project-description">A comprehensive online retail solution processing 1,000+ daily transactions with 99.9% uptime and seamless user experience.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Payment Integration</span>
+                    </div>
+                    <div class="project-results">
+                        <div class="result-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>40% increase in conversions</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>99.9% uptime achieved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-category="web">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="/images/cars-rent.jpg" alt="AI-Powered Fitness Application">
+                </div>
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="project-category">Mobile App</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">AI-Powered Fitness Application</h3>
+                    <p class="project-description">Mobile application leveraging machine learning to deliver personalized workout and nutrition plans to 50,000+ active users.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">TensorFlow.js</span>
+                        <span class="tech-tag">Cloud Functions</span>
+                    </div>
+                    <div class="project-results">
+                        <div class="result-item">
+                            <i class="fas fa-users"></i>
+                            <span>50,000+ active users</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.8★ App Store rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-category="branding">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="/images/Mulachap-v-mockup.jpg" alt="Real-Time Analytics Dashboard">
+                </div>
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="project-category">Web Application</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">Real-Time Analytics Dashboard</h3>
+                    <p class="project-description">Business intelligence platform processing millions of data points to deliver actionable insights through intuitive visualizations.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                    <div class="project-results">
+                        <div class="result-item">
+                            <i class="fas fa-database"></i>
+                            <span>Real-time data processing</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>85% faster decision making</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Showcase Section -->
+<section class="project-showcase">
+    <div class="container">
+        <div class="showcase-grid">
+<!-- Showcase 1 -->
+<div class="showcase-item" data-aos="fade-right" data-aos-duration="800" data-category="ecommerce">
+    <div class="showcase-content">
+        <div class="showcase-meta">
+            <span class="showcase-category">E-commerce Development</span>
+            <span class="showcase-year">2023</span>
+        </div>
+        <h3 class="showcase-title">TechShedd – Online Electronics Store</h3>
+        <p class="showcase-description">
+            Custom-built e-commerce platform for TechShedd, showcasing electronics and tech gadgets with intuitive navigation, seamless checkout, and integrated inventory management, developed using Wix Studio.
+        </p>
+        <div class="showcase-tech">
+            <span class="tech-tag">Wix Studio</span>
+            <span class="tech-tag">SEO</span>
+        </div>
+        <div class="showcase-results">
+            <div class="result-card">
+                <div class="result-number">3x</div>
+                <div class="result-label">Faster Load Times</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">25%</div>
+                <div class="result-label">Increase </div>
+            </div>
+        </div>
+        <a href="#" class="cta-button">View Case Study</a>
+    </div>
+    <div class="showcase-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+        <img src="/images/techshedd.jpg" alt="TechShedd E-commerce Store">
+    </div>
+</div>
+
+
+<!-- Showcase 2 -->
+<div class="showcase-item reverse" data-aos="fade-left" data-aos-duration="800" data-category="ecommerce">
+    <div class="showcase-content">
+        <div class="showcase-meta">
+            <span class="showcase-category">E-commerce Development</span>
+            <span class="showcase-year">2025</span>
+        </div>
+        <h3 class="showcase-title">Lizzie Shop – Beauty & Cosmetics Online Store</h3>
+        <p class="showcase-description">
+            A sleek, user-friendly online store for Lizzie Shop in Embu, custom-built to showcase beauty and cosmetic products with smooth navigation, secure checkout, and easy inventory management.
+        </p>
+        <div class="showcase-tech">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+        </div>
+        <div class="showcase-results">
+            <div class="result-card">
+                <div class="result-number">2.8x</div>
+                <div class="result-label">Faster Load Times</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">22%</div>
+                <div class="result-label">Reduced Cart Abandonment</div>
+            </div>
+        </div>
+        <a href="#" class="cta-button">View Case Study</a>
+    </div>
+    <div class="showcase-image" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+        <img src="/images/lizzie.jpg" alt="Lizzie Shop Beauty E-commerce">
+    </div>
+   </div>
+  </div> 
+ </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="technologies-section">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+            <h2>Technologies & Tools</h2>
+            <p>Leveraging cutting-edge technologies to build robust, scalable solutions</p>
+        </div>
+        <div class="technologies-grid">
+            <div class="tech-category" data-aos="fade-up" data-aos-duration="800">
+                <h3 class="tech-category-title">Frontend</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-vuejs"></i>
+                        <span>Vue.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-angular"></i>
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-category" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <h3 class="tech-category-title">Backend</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-server"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-category" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <h3 class="tech-category-title">Tools & Others</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>CI/CD</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>React Native</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-search"></i>
+                        <span>SEO</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section id="about-cta">
+        <div class="container">
+            <div class="cta-section" data-aos="zoom-in" data-aos-duration="800">
+                <h2>Ready to Transform Your Digital Presence?</h2>
+                <p>Let's collaborate to create something extraordinary. Your vision combined with my expertise can achieve remarkable results.</p>
+                <a href="/book-online/" class="cta-button-light">Start Your Project Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800">
+                    <h3>Ephraim Works</h3>
+                    <p>Engineering digital excellence through strategic technology solutions.</p>
+                     <div class="social-links">
+                       <a href="https://www.tiktok.com/@ephraim_creations?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
+                       <a href="https://www.youtube.com/@EphraimCreationsKE"><i class="fab fa-youtube"></i></a>
+                       <a href="https://www.facebook.com/ephraimmutwiri2025"><i class="fab fa-facebook"></i></a>
+                       <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310"><i class="fab fa-linkedin"></i></a>
+                     </div>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/about/"><i class="fas fa-chevron-right"></i> About me</a></li>
+                        <li><a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a></li>
+                        <li><a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a></li>
+                        <li><a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a></li>
+                        <li><a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a></li>
+                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce Development</a></li>
+                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a></li>
+                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a></li>
+                        <li><a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a></li>
+                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing & Visuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="mailto:ephraimmutwiri01@gmail.com"><i class="fas fa-envelope"></i> Email me</a></li>
+                        <li><a href="tel:+254112268873"><i class="fas fa-phone"></i> Call </a></li>
+                        <li><a><i class="fas fa-map-marker-alt"></i> Kenya-based</a></li>
+                        <li><a href="/book-online/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-aos="fade-up" data-aos-duration="800">
+                <p>&copy; 2025 Ephraim Works. All rights reserved. | Crafted with precision and passion</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+<a href="https://wa.me/254112268873" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+    <!-- Back to Top Button -->
+<button id="backToTop" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/index.js" defer></script>
+    <script src="/js/port.js"></script>
+
+</body>
+</html>

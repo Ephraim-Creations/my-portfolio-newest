@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="product-category-slider">
+  <!-- Slider Container -->
+  <div class="slider-container">
+    <!-- Navigation Arrows -->
+    <button class="slider-nav prev" aria-label="Previous categories">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <button class="slider-nav next" aria-label="Next categories">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <!-- Slider Track -->
+    <div class="slider-track">
+      <!-- Category 1: Gym Equipment -->
+      <div class="category-card">
+        <a href="/shop/gym-equipment" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Gym Equipment" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Gym Equipment</h3>
+        </a>
+      </div>
+
+      <!-- Category 2: Security Cameras -->
+      <div class="category-card">
+        <a href="/shop/security-cameras" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Security Cameras" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Security Cameras</h3>
+        </a>
+      </div>
+
+      <!-- Category 3: Power Backups -->
+      <div class="category-card">
+        <a href="/shop/power-backups" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1605816976307-2d5830c1b0b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Power Backups" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Power Backups</h3>
+        </a>
+      </div>
+
+      <!-- Category 4: Solar Lights -->
+      <div class="category-card">
+        <a href="/shop/solar-lights" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Solar Lights" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Solar Lights</h3>
+        </a>
+      </div>
+
+      <!-- Category 5: TVs -->
+      <div class="category-card">
+        <a href="/shop/tvs" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="TVs" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">TVs</h3>
+        </a>
+      </div>
+
+      <!-- Category 6: Cookers -->
+      <div class="category-card">
+        <a href="/shop/cookers" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1556910633-50933745ac42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cookers" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Cookers</h3>
+        </a>
+      </div>
+
+      <!-- Category 7: Dispensers -->
+      <div class="category-card">
+        <a href="/shop/dispensers" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1603051994254-5c5c56d9d0e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dispensers" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Dispensers</h3>
+        </a>
+      </div>
+
+      <!-- Category 8: Washing Machines -->
+      <div class="category-card">
+        <a href="/shop/washing-machines" class="category-link">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1551216223-37a1c4f0073d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Washing Machines" loading="lazy">
+            <div class="overlay"></div>
+          </div>
+          <h3 class="category-title">Washing Machines</h3>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Slider Indicators -->
+    <div class="slider-indicators">
+      <button class="indicator active" data-index="0" aria-label="Show categories 1-2"></button>
+      <button class="indicator" data-index="2" aria-label="Show categories 3-4"></button>
+      <button class="indicator" data-index="4" aria-label="Show categories 5-6"></button>
+      <button class="indicator" data-index="6" aria-label="Show categories 7-8"></button>
+    </div>
+  </div>
+</section>
+
+<style>
+/* CSS: Reset and Base Styles */
+.product-category-slider {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.category-card {
+  flex: 0 0 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.category-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-link:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  transition: background 0.3s ease;
+}
+
+.category-link:hover .overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+}
+
+.category-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  margin: 0;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  z-index: 2;
+}
+
+/* Navigation Arrows */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.slider-nav:hover {
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.slider-nav.prev {
+  left: 15px;
+}
+
+.slider-nav.next {
+  right: 15px;
+}
+
+.slider-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.slider-nav:disabled:hover {
+  transform: translateY(-50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Slider Indicators */
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #333;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-card {
+    flex: 0 0 100%;
+  }
+  
+  .image-container {
+    height: 250px;
+  }
+  
+  .category-title {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+  
+  .product-category-slider {
+    padding: 30px 15px;
+  }
+  
+  .slider-nav {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .slider-nav.prev {
+    left: 10px;
+  }
+  
+  .slider-nav.next {
+    right: 10px;
+  }
+  
+  .slider-indicators {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    height: 200px;
+  }
+  
+  .category-title {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+  
+  .slider-nav {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .slider-nav svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+</style>
+
+<script>
+// JavaScript: Enhanced Slider Functionality with Navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderTrack = document.querySelector('.slider-track');
+  const categories = document.querySelectorAll('.category-card');
+  const prevButton = document.querySelector('.slider-nav.prev');
+  const nextButton = document.querySelector('.slider-nav.next');
+  const indicators = document.querySelectorAll('.indicator');
+  const totalCategories = categories.length;
+  let currentIndex = 0;
+  let autoSlideInterval;
+  const slideDuration = 5000; // 5 seconds
+  
+  // Function to update slider position
+  function updateSlider() {
+    const slidesToShow = window.innerWidth <= 768 ? 1 : 2;
+    const slideWidth = 100 / slidesToShow;
+    const translateX = -currentIndex * slideWidth;
+    sliderTrack.style.transform = `translateX(${translateX}%)`;
+    
+    // Update navigation buttons state
+    updateNavButtons();
+    
+    // Update indicators
+    updateIndicators();
+  }
+  
+  // Function to update navigation buttons state
+  function updateNavButtons() {
+    const slidesToShow = window.innerWidth <= 768 ? 1 : 2;
+    
+    // Disable prev button if at the beginning
+    prevButton.disabled = currentIndex === 0;
+    
+    // Disable next button if at the end
+    const maxIndex = totalCategories - slidesToShow;
+    nextButton.disabled = currentIndex >= maxIndex;
+  }
+  
+  // Function to update indicators
+  function updateIndicators() {
+    indicators.forEach((indicator, index) => {
+      if (parseInt(indicator.dataset.index) === currentIndex) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+  }
+  
+  // Function to go to next slide
+  function nextSlide() {
+    const slidesToShow = window.innerWidth <= 768 ? 1 : 2;
+    const maxIndex = totalCategories - slidesToShow;
+    
+    if (currentIndex < maxIndex) {
+      currentIndex += slidesToShow;
+    } else {
+      // Loop back to beginning
+      currentIndex = 0;
+    }
+    
+    updateSlider();
+  }
+  
+  // Function to go to previous slide
+  function prevSlide() {
+    const slidesToShow = window.innerWidth <= 768 ? 1 : 2;
+    
+    if (currentIndex > 0) {
+      currentIndex -= slidesToShow;
+    } else {
+      // Loop to end
+      const maxIndex = totalCategories - slidesToShow;
+      currentIndex = maxIndex;
+    }
+    
+    updateSlider();
+  }
+  
+  // Function to go to specific slide
+  function goToSlide(index) {
+    currentIndex = parseInt(index);
+    updateSlider();
+    resetAutoSlide();
+  }
+  
+  // Function to start auto-sliding
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, slideDuration);
+  }
+  
+  // Function to stop auto-sliding (on hover)
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+  
+  // Function to reset auto-slide timer
+  function resetAutoSlide() {
+    stopAutoSlide();
+    startAutoSlide();
+  }
+  
+  // Initialize slider
+  updateSlider();
+  startAutoSlide();
+  
+  // Event listeners for navigation buttons
+  prevButton.addEventListener('click', function() {
+    prevSlide();
+    resetAutoSlide();
+  });
+  
+  nextButton.addEventListener('click', function() {
+    nextSlide();
+    resetAutoSlide();
+  });
+  
+  // Event listeners for indicators
+  indicators.forEach(indicator => {
+    indicator.addEventListener('click', function() {
+      goToSlide(this.dataset.index);
+    });
+  });
+  
+  // Pause auto-slide on hover
+  const sliderContainer = document.querySelector('.slider-container');
+  sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+  sliderContainer.addEventListener('mouseleave', startAutoSlide);
+  
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      // Reset to first slide on resize
+      currentIndex = 0;
+      updateSlider();
+    }, 250);
+  });
+  
+  // Optional: Add touch swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  sliderContainer.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoSlide();
+  });
+  
+  sliderContainer.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    startAutoSlide();
+  });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        nextSlide();
+      } else {
+        // Swipe right - previous slide
+        prevSlide();
+      }
+      resetAutoSlide();
+    }
+  }
+  
+  // Keyboard navigation support
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      resetAutoSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      resetAutoSlide();
+    }
+  });
+});
+</script>
+</body>
+</html>
