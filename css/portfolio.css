@@ -252,6 +252,7 @@
 }
 
 .showcase-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.438);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -424,6 +425,9 @@
     .showcase-item {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+    .showcase-title {
+        font-size: 1.4rem;
     }
     .tech-category {
     background: var(--card-bg);
