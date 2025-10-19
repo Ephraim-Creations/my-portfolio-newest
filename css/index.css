@@ -245,6 +245,230 @@ header.shrink {
   font-size: 1.5rem;
 }
 
+/* Dropdown Styles - Enhanced Version */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle shine effect on hover */
+.dropdown-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.dropdown-toggle:hover::before {
+    left: 100%;
+}
+
+.dropdown-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.dropdown-toggle .fa-chevron-down {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 200px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+
+.dropdown-menu li {
+    list-style: none;
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+
+/* Add subtle icons to dropdown items */
+.dropdown-menu a[href*="book-online"]::before {
+    content: '📅';
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a[href*="get-quote"]::before {
+    content: '💰';
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+/* CLEAN HOVER EFFECT - No background color change */
+.dropdown-menu a:hover {
+    color: var(--primary);
+    padding-left: 25px;
+    background: transparent !important;
+}
+
+/* Simple left border indicator on hover */
+.dropdown-menu a:hover {
+    border-left: 3px solid var(--primary);
+    background: transparent !important;
+}
+
+/* Mobile Responsive - Enhanced */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-toggle {
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 auto;
+        padding: 12px 6px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    
+    .dropdown-toggle .fa-chevron-down {
+        transform: none !important;
+    }
+    
+    .dropdown.active .dropdown-toggle .fa-chevron-down {
+        transform: rotate(180deg) !important;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        margin-top: 8px;
+        border-radius: 10px;
+        padding: 8px 0;
+        min-width: auto;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+        animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .dropdown-menu a {
+        padding: 12px 20px;
+        border-left: 3px solid transparent;
+        font-size: 0.95rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .dropdown-menu a:hover {
+        border-left-color: var(--primary);
+        background: transparent !important;
+        padding-left: 20px;
+        color: var(--primary);
+    }
+    
+    /* Enhanced mobile animation */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-15px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+/* Desktop hover states - Clean */
+@media (min-width: 769px) {
+    .dropdown-menu a:hover {
+        background: transparent !important;
+        color: var(--primary);
+        border-left: 3px solid var(--primary);
+        padding-left: 25px;
+    }
+}
+
+/* Active state for better UX */
+.dropdown-toggle:active {
+    transform: translateY(0);
+}
+
+/* Focus states for accessibility */
+.dropdown-toggle:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.dropdown-menu a:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+}
+
 /* Hero Section */
 .hero {
   padding-top: 180px;

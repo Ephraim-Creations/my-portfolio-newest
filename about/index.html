@@ -5,18 +5,23 @@
     <!-- Basic Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>About Ephraim Mutwiri | Founder of Ephraim Works | Web Designer & Digital Strategist</title>
+    <title>About Ephraim Mutwiri | Web Designer, Developer & Digital Strategist in Kenya</title>
     <meta name="description"
-        content="Learn more about Ephraim Mutwiri, founder of Ephraim Works — a digital creative agency focused on web design, branding, and digital marketing. Discover the story behind the vision.">
+        content="Discover the story of Ephraim Mutwiri — a Kenya-based web designer, full stack developer, and digital strategist behind Ephraim Works. Learn how he helps businesses grow online through creative web design, branding, and digital transformation." />
     <meta name="keywords"
-        content="Ephraim Mutwiri, Ephraim Works, About Ephraim, Web Designer Kenya, Digital Marketing Expert, UI/UX Designer, Branding Specialist, Creative Agency Kenya">
+        content="Ephraim Mutwiri, About Ephraim Works, Web Designer Kenya, Full Stack Developer Nairobi, Web Design Portfolio Kenya, Freelance Web Developer Kenya, Custom WordPress Developer Kenya, React JS Developer Kenya, UI UX Designer Nairobi, Digital Branding Expert Kenya, Creative Agency Founder Kenya, Website Redesign Specialist Kenya, Affordable Web Design Kenya, Software Engineer Kenya">
     <meta name="author" content="Ephraim Mutwiri">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.ephraimworks.online/about/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.ephraimworks.online/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <meta name="theme-color" content="#1c53cb">
+    <meta name="msapplication-TileColor" content="#1c53cb">
 
     <!-- Fonts & Icons -->
     <link
@@ -35,8 +40,8 @@
     <meta property="og:type" content="profile">
     <meta property="og:title" content="About Ephraim Mutwiri | Founder of Ephraim Works">
     <meta property="og:description"
-        content="Discover the journey of Ephraim Mutwiri — a creative web designer, developer, and digital strategist behind Ephraim Works.">
-    <meta property="og:image" content="https://www.ephraimworks.online/images/og-about.png">
+        content="Discover the story of Ephraim Mutwiri — a Kenya-based web designer, full stack developer, and digital strategist behind Ephraim Works. Learn how he helps businesses grow online through creative web design, branding, and digital transformation.">
+    <meta property="og:image" content="https://www.ephraimworks.online/ephraim-cover.jpg">
     <meta property="og:url" content="https://www.ephraimworks.online/about/">
     <meta property="og:site_name" content="Ephraim Works">
 
@@ -44,8 +49,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Ephraim Mutwiri | Web Designer & Digital Strategist">
     <meta name="twitter:description"
-        content="Meet the founder of Ephraim Works — a visionary in digital design, development, and marketing.">
-    <meta name="twitter:image" content="https://www.ephraimworks.online/images/og-about.png">
+        content="Discover the story of Ephraim Mutwiri — a Kenya-based web designer, full stack developer, and digital strategist behind Ephraim Works. Learn how he helps businesses grow online through creative web design, branding, and digital transformation.">
+    <meta name="twitter:image" content="https://www.ephraimworks.online/ephraim-cover.jpg">
+    <meta name="twitter:creator" content="@EphCreations01">
+    <meta name="twitter:site" content="@EphCreations01">
 
     <!-- Robots -->
     <meta name="robots" content="index, follow">
@@ -59,7 +66,7 @@
     "name": "Ephraim Mutwiri",
     "alternateName": "Ephraim Works",
     "url": "https://www.ephraimworks.online/about/",
-    "image": "https://www.ephraimworks.online/images/Ephraim.jpg",
+    "image": "https://www.ephraimworks.online/images/favicon.png",
     "jobTitle": "Web Designer, Developer & Digital Strategist",
     "worksFor": {
       "@type": "Organization",
@@ -68,8 +75,8 @@
     },
     "sameAs": [
       "https://www.linkedin.com/in/ephraim-mutwiri-052a58310",
-      "https://www.instagram.com/ephraimworks",
-      "https://github.com/ephraimworks",
+      "https://www.instagram.com/ephraim_mutwiri",
+      "https://github.com/Ephraim-Creations",
       "https://www.youtube.com/@EphraimCreationsKE"
     ],
     "description": "Founder of Ephraim Works — a creative agency offering professional web design, branding, and digital marketing solutions for businesses and creators."
@@ -84,12 +91,13 @@
 <body>
     <!-- Background Animation -->
     <div class="bg-animation" id="bgAnimation"></div>
-    <!-- Header (reused from home) -->
+
+    <!-- Header -->
     <header id="header">
         <div class="container header-container">
             <a href="/" class="logo">
                 <div class="logo-img">
-                    <img src="/images/favicon.png" alt="Ephraim Works Logo">
+                    <img src="/images/favicon.png" alt="Ephraim Works Logo" />
                 </div>
                 <div class="logo-text">Ephraim M <span>Works</span></div>
             </a>
@@ -103,7 +111,15 @@
                 <li><a href="/portfolio/">Portfolio</a></li>
                 <li><a href="/eBooks/">eBooks</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="/book-online/" class="cta-button">Start Project</a></li>
+                <li class="dropdown">
+                    <a href="#" class="cta-button dropdown-toggle">
+                        Start Now <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/book-online/">Start a project</a></li>
+                        <li><a href="/schedule/">Book Consultation</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </header>
@@ -285,8 +301,11 @@
             <div class="footer-container">
                 <div class="footer-col" data-aos="fade-up" data-aos-duration="800">
                     <h3>Ephraim Works</h3>
-                    <p>Transforming ideas into impactful digital experiences through design precision, technical
-                        innovation, and strategic execution that drives real business results.</p>
+                    <p>
+                        Transforming ideas into impactful digital experiences through
+                        design precision, technical innovation, and strategic execution
+                        that drives real business results.
+                    </p>
                     <div class="social-links">
                         <a href="https://www.tiktok.com/@ephraim_creations?is_from_webapp=1&sender_device=pc"><i
                                 class="fab fa-tiktok"></i></a>
@@ -299,39 +318,81 @@
                 <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="/about/"><i class="fas fa-chevron-right"></i> About me</a></li>
-                        <li><a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a></li>
-                        <li><a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a></li>
-                        <li><a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a></li>
-                        <li><a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a></li>
+                        <li>
+                            <a href="/about/"><i class="fas fa-chevron-right"></i> About me</a>
+                        </li>
+                        <li>
+                            <a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a>
+                        </li>
+                        <li>
+                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a>
+                        </li>
+                        <li>
+                            <a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a>
+                        </li>
+                        <li>
+                            <a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a></li>
-                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce Development</a></li>
-                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a></li>
-                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a></li>
-                        <li><a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a></li>
-                        <li><a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing & Visuals</a></li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce
+                                Development</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a>
+                        </li>
+                        <li>
+                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing &
+                                Visuals</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <h3>Connect</h3>
                     <ul>
-                        <li><a href="mailto:ephraimmutwiri01@gmail.com"><i class="fas fa-envelope"></i> Email me</a>
+                        <li>
+                            <a href="mailto:info@ephraimworks.online"><i
+                                    class="fas fa-envelope"></i>info@ephraimworks.online</a>
                         </li>
-                        <li><a href="tel:+254112268873"><i class="fas fa-phone"></i> Call </a></li>
-                        <li><a><i class="fas fa-map-marker-alt"></i> Kenya-based</a></li>
-                        <li><a href="/book-online/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a></li>
+                        <li>
+                            <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873
+                            </a>
+                        </li>
+                        <li>
+                            <a><i class="fas fa-map-marker-alt"></i> Kenya-based</a>
+                        </li>
+                        <li>
+                            <a href="/schedule/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="copyright" data-aos="fade-up" data-aos-duration="800">
-                <p>&copy; 2025 Ephraim Works. All rights reserved. | Crafted with precision and passion</p>
+                <p>
+                    &copy; 2025 Ephraim M Works. All rights reserved. | Crafted with
+                    precision and passion <br>
+                    <i>Powered By: <a href="/about/"
+                            style="font-size: 20px; color: blueviolet; text-decoration: none;">Ephraim</a></i>
+                </p>
             </div>
         </div>
     </footer>

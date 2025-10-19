@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Schedule Consultation | Ephraim Works</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/schedule.css" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <meta name="description"
+        content="Ephraim Works - Full Stack Developer specializing in building scalable web and mobile applications. Explore my portfolio, expertise, and insights on modern development practices." />
+    <meta name="keywords"
+        content="Full Stack Developer, Web Development, Mobile Applications, React, Node.js, JavaScript, System Architecture, UI/UX Design, Technical Consulting, Portfolio, Blog" />
+    <meta name="author" content="Ephraim Mutwiri" />
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-img">
+                    <img src="/images/favicon.png" alt="Ephraim Works Logo" />
+                </div>
+                <div class="logo-text">Ephraim M <span>Works</span></div>
+            </a>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/" class="active">About</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/eBooks/">eBooks</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="cta-button dropdown-toggle">
+                        Start Now <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/book-online/">Start a project</a></li>
+                        <li><a href="/schedule/">Book Consultation</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="consultation-main">
+        <div class="consultation-hero">
+            <div class="hero-content">
+                <h1>Let's Create Something <span class="accent-text">Amazing</span> Together</h1>
+                <p class="hero-subtitle">Schedule your professional consultation and take the first step toward
+                    transforming your digital presence</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <span>Expert Strategy</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💡</div>
+                        <span>Creative Solutions</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <span>Proven Results</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">⚡</div>
+                    <h4>Fast Turnaround</h4>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">⭐</div>
+                    <h4>5-Star Service</h4>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">💬</div>
+                    <h4>Direct Communication</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="consultation-container">
+            <div class="booking-card">
+                <div class="card-header">
+                    <h2>Schedule Your Consultation</h2>
+                    <p>Fill out the form below and we'll connect via WhatsApp to discuss your project</p>
+                    <div class="availability-badge">
+                        <span class="badge-dot"></span>
+                        Available Monday - Friday
+                    </div>
+                </div>
+
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-section">
+                        <h3 class="section-title">Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name (optional) </label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+254 xxxxxxxxxx">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Project Details</h3>
+                        <div class="form-group">
+                            <label for="service">Service Type *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select your preferred service</option>
+
+                                <!-- Web Design & Development -->
+                                <option value="web-design-redesign">
+                                    Web Design & Redesign
+                                </option>
+                                <option value="wordpress-custom-websites">
+                                    WordPress & Custom Websites
+                                </option>
+                                <option value="ecommerce-development">
+                                    E-commerce Development
+                                </option>
+                                <option value="portfolio-landing-pages">
+                                    Portfolio & Landing Page Design
+                                </option>
+                                <option value="website-maintenance">
+                                    Website Maintenance
+                                </option>
+
+                                <!-- Branding & Visual Identity -->
+                                <option value="logo-visual-identity">
+                                    Logo & Visual Identity Design
+                                </option>
+                                <option value="social-media-design">
+                                    Social Media Design Systems
+                                </option>
+                                <option value="marketing-print-media">
+                                    Marketing Collateral & Print Media
+                                </option>
+                                <option value="merch-presentation-design">
+                                    T-shirt, Merch & Presentation Design
+                                </option>
+
+                                <!-- Digital Marketing & SEO -->
+                                <option value="seo-optimization">
+                                    SEO Strategy & Optimization
+                                </option>
+                                <option value="analytics-reporting">
+                                    Analytics, Insights & Reporting
+                                </option>
+
+                                <option value="custom-project">
+                                    Custom Project / Combination
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Project Budget (KES) *</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select your budget range</option>
+
+                                <!-- Website Development Plans -->
+                                <option value="starter-website">KSh 20,000 - Starter Website</option>
+                                <option value="professional-website">KSh 30,000 - Professional Website</option>
+                                <option value="enterprise-website">KSh 50,000+ - Enterprise Website</option>
+
+                                <!-- Website Management Plans -->
+                                <option value="basic-management">KSh 5,000/month - Basic Management</option>
+                                <option value="standard-management">KSh 9,999/month - Standard Management</option>
+                                <option value="premium-management">KSh 14,999/month - Premium Management</option>
+
+                                <!-- Custom Budget Ranges -->
+                                <option value="custom-15-25">KSh 15,000 - 25,000 - Small Project</option>
+                                <option value="custom-25-40">KSh 25,000 - 40,000 - Medium Project</option>
+                                <option value="custom-40-60">KSh 40,000 - 60,000 - Large Project</option>
+                                <option value="custom-60-plus">KSh 60,000+ - Enterprise Project</option>
+
+                                <!-- Not Sure Option -->
+                                <option value="not-sure">Not Sure - Need Quote</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Overview *</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Tell us about your project goals, timeline, and any specific requirements..."
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Preferred Consultation Time</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time *</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">Morning (8-11 a.m)</option>
+                                    <option value="12:00">Afternoon (12-3 p.m)</option>
+                                    <option value="16:00">Evening (6-8 p.m)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Schedule Consultation</span>
+                            <span class="btn-loading" style="display: none;">
+                                <span class="loading-spinner"></span>
+                                Processing...
+                            </span>
+                        </button>
+                        <p class="form-note">
+                            By submitting this form, you agree to be contacted via WhatsApp for your consultation.
+                        </p>
+                    </div>
+                </form>
+
+                <div class="booking-success" id="successMessage" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>Consultation Scheduled Successfully!</h3>
+                    <p>We've received your request and will contact you via WhatsApp shortly to confirm your
+                        consultation time.</p>
+                    <div class="success-details" id="successDetails"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800">
+                    <h3>Ephraim Works</h3>
+                    <p>
+                        Transforming ideas into impactful digital experiences through
+                        design precision, technical innovation, and strategic execution
+                        that drives real business results.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@ephraim_creations?is_from_webapp=1&sender_device=pc"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@EphraimCreationsKE"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/ephraimmutwiri2025"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li>
+                            <a href="/about/"><i class="fas fa-chevron-right"></i> About me</a>
+                        </li>
+                        <li>
+                            <a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a>
+                        </li>
+                        <li>
+                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a>
+                        </li>
+                        <li>
+                            <a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a>
+                        </li>
+                        <li>
+                            <a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce
+                                Development</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a>
+                        </li>
+                        <li>
+                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing &
+                                Visuals</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li>
+                            <a href="mailto:info@ephraimworks.online"><i
+                                    class="fas fa-envelope"></i>info@ephraimworks.online</a>
+                        </li>
+                        <li>
+                            <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873
+                            </a>
+                        </li>
+                        <li>
+                            <a><i class="fas fa-map-marker-alt"></i> Kenya-based</a>
+                        </li>
+                        <li>
+                            <a href="/schedule/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-aos="fade-up" data-aos-duration="800">
+                <p>
+                    &copy; 2025 Ephraim M Works. All rights reserved. | Crafted with
+                    precision and passion <br>
+                    <i>Powered By: <a href="/about/"
+                            style="font-size: 20px; color: blueviolet; text-decoration: none;">Ephraim</a></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/254112268873" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/schedule.js"></script>
+
+</body>
+
+</html>

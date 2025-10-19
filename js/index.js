@@ -1,5 +1,6 @@
-        // Mobile Navigation Toggle
-        const hamburger = document.getElementById('hamburger');
+        // Mobile Navigation Toggle commented out for now cant work with dropdown
+
+       /* const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
         hamburger.addEventListener('click', () => {
@@ -15,7 +16,111 @@
                 navMenu.classList.remove('active');
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
+        }); */
+
+        // Mobile Navigation Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.innerHTML = navMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+});
+
+// Close mobile menu when clicking on a link (EXCEPT dropdown toggle)
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Don't close menu if it's a dropdown toggle on mobile
+        if (window.innerWidth <= 768 && link.classList.contains('dropdown-toggle')) {
+            e.preventDefault();
+            return;
+        }
+        
+        navMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
+// Dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    // Mobile dropdown toggle
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // Mobile functionality
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Toggle current dropdown
+                const wasActive = dropdown.classList.contains('active');
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // If we're opening a dropdown, keep the mobile menu open
+                if (!wasActive) {
+                    navMenu.classList.add('active');
+                    hamburger.innerHTML = '<i class="fas fa-times"></i>';
+                }
+            }
         });
+    });
+    
+    // Close dropdowns when clicking outside (mobile)
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            if (!e.target.closest('.dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        }
+    });
+    
+    // Close dropdowns when mobile menu is closed via hamburger
+    hamburger.addEventListener('click', function() {
+        // Close all dropdowns when menu is closed via hamburger
+        if (!navMenu.classList.contains('active')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        // Close all dropdowns when switching to desktop
+        if (window.innerWidth > 768) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+    
+    // Close mobile menu when clicking on dropdown LINKS (not toggle)
+    document.querySelectorAll('.dropdown-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    });
+});
 
         // Header scroll effect
         const header = document.getElementById('header');

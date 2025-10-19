@@ -5,23 +5,23 @@ const ebooks = [
     title: "Modern Web Development Mastery",
     description: "Anyone can create a functional and beautiful website, and this guide shows you exactly how. You will learn how to plan your site, pick the right CMS, install themes or templates, customize layouts, and add practical functionality such as forms, SEO basics, and mobile friendly design. The lessons are project based, with screenshots, checklists, and short exercises that let you practice as you go. By the end you will have a live, editable website you can update and grow without hunting through scattered tutorials.",
     cover: "/images/Learn-Web-Design.jpg",
-    price: 1,
+    price: 199,
     file: "/ebooks/pdfs/Your-First-Website.pdf"
   },
 {
   id: 2,
-  title: "100 Skills for the Future. Know all Master a few!",
-  description: "The world is changing fast — new opportunities are created every day for those who can adapt and learn. 100 Skills for the Future is your ultimate roadmap to mastering the digital age. Inside, you’ll find curated learning paths, trusted tools, and practical exercises covering 100 in-demand skills across design, technology, business, and creativity.",
+  title: "60 Skills to Level Up Your Skills or Business. Know all Master a few!",
+  description: "The world is changing fast — new opportunities are created every day for those who can adapt and learn. 60 Skills for the Future is your ultimate roadmap to mastering the digital age. Inside, you’ll find curated learning paths, trusted tools, and practical exercises covering 100 in-demand skills across design, technology, business, and creativity.",
   cover: "/images/skill-boost.jpg ",
-  price: 0,
-  file: "/ebooks/100-skills-for-the-future.pdf"
+  price: 699,
+  file: "/ebooks/pdfs/60-skills-for-the-future.pdf"
 },
 {
   id: 3,
   title: "50 Tools to Level Up Your Skills or Business",
   description: "A curated collection of 50 powerful tools designed to elevate your skills, streamline your workflow, and accelerate business growth. Inside, you'll find carefully selected platforms that help you learn faster, create stunning visuals, manage projects efficiently, and market your brand with confidence. From AI-powered writing assistants and design generators to social media planners, analytics dashboards, and business automation apps — this guide gives you everything you need to work smarter, not harder.",
   cover: "/images/bizzy-boost.jpg",
-  price: 0,
+  price: 300,
   file: "/ebooks/pdfs/50_Tools_to_Level_Up_Your_Skills_or_Business.pdf"
 }
 
