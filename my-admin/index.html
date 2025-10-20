@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Dashboard - Ephraim Works</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .dashboard-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(15, 23, 42, 0.8);
+            color: var(--light);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        
+        button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .post-preview {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="loginSection" class="login-container">
+        <h2>🔐 Blog Dashboard</h2>
+        <p style="text-align: center; color: #94a3b8; margin-bottom: 30px;">
+            Enter your password to access the publishing dashboard
+        </p>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Enter dashboard password" autocomplete="off">
+        </div>
+        <button onclick="login()">Access Dashboard</button>
+        <div id="loginMessage" class="message hidden"></div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="dashboard-container hidden">
+        <h1>📝 Blog Publishing Dashboard</h1>
+        
+        <form id="blogForm">
+            <div class="form-group">
+                <label>📄 Title *</label>
+                <input type="text" id="title" required placeholder="Enter blog post title">
+            </div>
+            
+            <div class="form-group">
+                <label>🔗 Slug (URL-friendly) *</label>
+                <input type="text" id="slug" required placeholder="url-friendly-slug">
+            </div>
+            
+            <div class="form-group">
+                <label>📝 Excerpt</label>
+                <textarea id="excerpt" placeholder="Brief description of the blog post"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>📖 Content *</label>
+                <textarea id="content" required placeholder="Write your blog post content here..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>🖼️ Image URL</label>
+                <input type="url" id="image_url" placeholder="https://example.com/image.jpg">
+            </div>
+            
+            <div class="form-group">
+                <label>🏷️ Category</label>
+                <select id="category">
+                    <option value="Web Development">Web Development</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Business">Business</option>
+                    <option value="Tech Insights">Tech Insights</option>
+                    <option value="Tutorials">Tutorials</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>⏱️ Read Time</label>
+                <input type="text" id="read_time" value="5 min read" placeholder="5 min read">
+            </div>
+            
+            <button type="submit">🚀 Publish Blog Post</button>
+        </form>
+        
+        <div id="message" class="message hidden"></div>
+        
+        <div class="post-preview">
+            <h3>📊 Quick Stats</h3>
+            <p>Posts will automatically appear on: <code>ephraimworks.online/blog/</code></p>
+            <p>Individual post URL: <code>ephraimworks.online/blog/your-slug-here/</code></p>
+        </div>
+        
+        <button onclick="logout()" style="background: #64748b; margin-top: 20px;">🔒 Logout</button>
+    </div>
+
+    <script>
+        // 🔐 SECURE PASSWORD CONFIGURATION
+        // Set your dashboard password here (will be hashed for security)
+        const CORRECT_PASSWORD_HASH = "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"; // hash for "123"
+        
+        // Replace the above hash with your own password hash
+        // To generate: go to browser console and type: 
+        // CryptoJS.SHA256("your-password-here").toString()
+        
+        // Initialize Supabase (replace with your actual keys)
+        const supabaseUrl = 'https://rvrlmqdepktzotpjsexh.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2cmxtcWRlcGt0em90cGpzZXhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA5MDU3OTEsImV4cCI6MjA3NjQ4MTc5MX0.Egz0gCauz1Ksf3DcGzhJbdBN85MsvUb6JB0zDHtr6hI';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // Password hashing function
+        function hashPassword(password) {
+            return CryptoJS.SHA256(password).toString();
+        }
+
+        // Login function
+        function login() {
+            const password = document.getElementById('password').value;
+            const hashedPassword = hashPassword(password);
+            const messageEl = document.getElementById('loginMessage');
+            
+            if (hashedPassword === CORRECT_PASSWORD_HASH) {
+                document.getElementById('loginSection').classList.add('hidden');
+                document.getElementById('dashboardSection').classList.remove('hidden');
+                messageEl.classList.add('hidden');
+                
+                // Store session (simple approach)
+                sessionStorage.setItem('adminAuthenticated', 'true');
+            } else {
+                messageEl.textContent = '❌ Invalid password. Please try again.';
+                messageEl.className = 'message error';
+                messageEl.classList.remove('hidden');
+            }
+        }
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('adminAuthenticated');
+            document.getElementById('loginSection').classList.remove('hidden');
+            document.getElementById('dashboardSection').classList.add('hidden');
+            document.getElementById('password').value = '';
+        }
+
+        // Check if already authenticated
+        if (sessionStorage.getItem('adminAuthenticated') === 'true') {
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('dashboardSection').classList.remove('hidden');
+        }
+
+        // Handle form submission
+        document.getElementById('blogForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Publishing...';
+            submitBtn.disabled = true;
+            
+            const formData = {
+                title: document.getElementById('title').value,
+                slug: document.getElementById('slug').value,
+                excerpt: document.getElementById('excerpt').value,
+                content: document.getElementById('content').value,
+                image_url: document.getElementById('image_url').value,
+                category: document.getElementById('category').value,
+                read_time: document.getElementById('read_time').value,
+                status: 'published',
+                published_at: new Date().toISOString()
+            };
+
+            try {
+                const { data, error } = await supabase
+                    .from('blog_posts')
+                    .insert([formData])
+                    .select();
+
+                if (error) throw error;
+
+                document.getElementById('message').innerHTML = `
+                    <div class="success">
+                        ✅ Blog post published successfully! 
+                        <br><small>It will appear on your blog immediately.</small>
+                    </div>
+                `;
+                
+                // Reset form
+                document.getElementById('blogForm').reset();
+                
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('message').classList.add('hidden');
+                }, 5000);
+                
+            } catch (error) {
+                document.getElementById('message').innerHTML = `
+                    <div class="error">
+                        ❌ Error: ${error.message}
+                    </div>
+                `;
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                document.getElementById('message').classList.remove('hidden');
+            }
+        });
+
+        // Auto-generate slug from title
+        document.getElementById('title').addEventListener('input', function() {
+            const slug = this.value
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9\s-]/g, '')
+                .replace(/[\s-]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+            document.getElementById('slug').value = slug;
+        });
+    </script>
+</body>
+</html>
