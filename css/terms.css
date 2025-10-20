@@ -1,18 +1,4 @@
-:root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #7c3aed;
-    --accent: #f59e0b;
-    --dark: #1e293b;
-    --light: #f8fafc;
-    --gray: #64748b;
-    --success: #10b981;
-    --bg-color: #0f172a;
-    --header-bg: rgba(15, 23, 42, 0.95);
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --header-height: 100px;
-    --header-shrink-height: 70px;
-}
+
 
 /* Terms of Service Specific Styles */
 .terms-hero {
@@ -20,6 +6,9 @@
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
     text-align: center;
 }
+ .terms-content{
+    margin: 50px 0;
+ }
 
 .terms-hero-content h1 {
     font-size: 3.5rem;
