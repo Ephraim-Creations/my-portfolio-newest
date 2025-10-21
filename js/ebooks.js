@@ -136,24 +136,47 @@ document.querySelectorAll(".showcase-content .quick-view").forEach(btn => {
   });
 });
 
-
 // ====== FORM SUBMISSION ======
 ebookForm.addEventListener("submit", e => {
   e.preventDefault();
 
-  const name = ebookForm.querySelector("#name").value.trim();
-  const email = ebookForm.querySelector("#email").value.trim();
+  // Reset previous errors
+  document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
 
-  if (!email || !email.includes("@")) {
-    alert("Please enter a valid email.");
-    return;
+  const name = ebookForm.querySelector("#name").value.trim();
+  const email = ebookForm.querySelector("#email").value.trim().toLowerCase();
+  const phone = ebookForm.querySelector("#phone").value.trim();
+  let hasError = false;
+
+  // --- Email validation ---
+  if (!email.endsWith("@gmail.com")) {
+    document.getElementById("emailError").textContent = "Please use a valid Gmail address (e.g. yourname@gmail.com).";
+    hasError = true;
   }
 
+  // --- Universal phone validation ---
+  const phonePattern = /^\+\d{7,15}$/; // + followed by 7 to 15 digits
+  if (!phonePattern.test(phone)) {
+    document.getElementById("phoneError").textContent =
+      "Please enter a valid phone number with your country code (e.g. +254 712 345 678 ).";
+    hasError = true;
+  }
+
+  // Stop submission if there are errors
+  if (hasError) return;
+
+  // Disable submit button during submission
+  const submitBtn = ebookForm.querySelector("button[type='submit']");
+  submitBtn.textContent = "Submitting...";
+  submitBtn.disabled = true;
+
+  // --- Proceed with submission ---
   fetch("https://formsubmit.co/ajax/ephraimmutwiri01@gmail.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name,
+      phone,
       email,
       ebook: currentEbook.title,
       price: `KES ${currentEbook.price}`
@@ -164,8 +187,16 @@ ebookForm.addEventListener("submit", e => {
     closeModal(formModal);
     payWithPaystack(currentEbook, email);
   })
-  .catch(() => alert("Error submitting form. Please try again."));
+  .catch(() => {
+    document.getElementById("emailError").textContent = "Error submitting form. Please try again.";
+  })
+  .finally(() => {
+    submitBtn.textContent = "Continue to Payment";
+    submitBtn.disabled = false;
+  });
 });
+
+
 
 // ====== PAYSTACK PAYMENT ======
 function payWithPaystack(ebook, email) {

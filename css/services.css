@@ -196,6 +196,49 @@
             font-size: 0.9rem;
             font-weight: 600;
         }
+        /*best selers badge*/
+        
+ .badge {
+  position: absolute;
+  top: -14px;
+  right: 14px;
+  background: linear-gradient(135deg, #ff0048, #ff8c00);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  border-radius: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px rgba(255, 80, 0, 0.7);
+  transform: rotate(3deg);
+  animation: pulseGlow 2s infinite ease-in-out, shimmer 4s infinite linear;
+  background-size: 200% 200%;
+  transition: all 0.3s ease-in-out;
+}
+
+.badge:hover {
+  transform: scale(1.1) rotate(0deg);
+  box-shadow: 0 0 24px rgba(255, 80, 0, 1);
+}
+
+/* 🔥 Turbo pulse animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 80, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 80, 0, 1);
+  }
+}
+
+/* ⚡ Subtle gradient shimmer (like a light sweep across the badge) */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
         .pricing-card:hover {
             transform: translateY(-10px);
