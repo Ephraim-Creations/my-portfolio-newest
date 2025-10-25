@@ -2,418 +2,422 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Blog - Ephraim Works | Web Development Insights</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap"
-        rel="stylesheet">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/about.css">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <meta name="description"
-        content="Explore insights from Ephraim Works on web design, full-stack development, and digital creativity.">
-    <meta name="keywords"
-        content="Ephraim Works, Blog, Web Design, Development, UI/UX, Branding, Portfolio, Technology">
-    <meta name="author" content="Ephraim Works">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Blog - Ephraim Works | Web Development Insights</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/about.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta name="description"
+    content="Explore insights from Ephraim Works on web design, full-stack development, and digital creativity.">
+  <meta name="keywords" content="Ephraim Works, Blog, Web Design, Development, UI/UX, Branding, Portfolio, Technology">
+  <meta name="author" content="Ephraim Works">
+  <style>
+    /* Blog hero */
+    .blog-hero {
+      text-align: center;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
 
-        /* Blog hero */
-        .blog-hero {
-          text-align: center;
-          padding: 120px 0 80px;
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .blog-hero::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-          opacity: 0.3;
-        }
-        
-        .blog-hero h1 {
-          font-size: 3.5rem;
-          margin-bottom: 16px;
-          color: var(--light);
-          position: relative;
-          font-family: 'Space Grotesk', sans-serif;
-          text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .blog-hero p {
-          font-size: 1.25rem;
-          color: #e2e8f0;
-          max-width: 600px;
-          margin: 0 auto;
-          position: relative;
-          line-height: 1.6;
-        }
+    .blog-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      color: var(--light);
+      position: relative;
+      font-family: 'Space Grotesk', sans-serif;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Blog grid */
-        .blog-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-          gap: 32px;
-          padding: 80px 10%;
-          max-width: 1400px;
-          margin: 0 auto;
-        }
-        
-        .blog-card {
-          background: var(--card-bg);
-          border-radius: 16px;
-          overflow: hidden;
-          box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          border: 1px solid rgba(255,255,255,0.08);
-          position: relative;
-          backdrop-filter: blur(10px);
-        }
-        
-        .blog-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, var(--primary), var(--accent));
-          transform: scaleX(0);
-          transition: transform 0.3s ease;
-        }
-        
-        .blog-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-          border-color: rgba(255,255,255,0.15);
-        }
-        
-        .blog-card:hover::before {
-          transform: scaleX(1);
-        }
-        
-        .blog-card img {
-          width: 100%;
-          height: 240px;
-          object-fit: cover;
-          transition: transform 0.3s ease;
-        }
-        
-        .blog-card:hover img {
-          transform: scale(1.05);
-        }
-        
-        .blog-content {
-          padding: 28px;
-        }
-        
-        .blog-content h2 {
-          font-size: 1.4rem;
-          margin: 12px 0;
-          color: var(--light);
-          line-height: 1.4;
-          font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .blog-content p {
-          font-size: 1rem;
-          line-height: 1.6;
-          color: #cbd5e1;
-          margin-bottom: 20px;
-        }
-        
-        .blog-meta {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-size: 0.875rem;
-          color: var(--accent);
-          margin-bottom: 12px;
-          flex-wrap: wrap;
-        }
-        
-        .blog-meta i {
-          font-size: 0.75rem;
-        }
-        
-        .read-more {
-          color: var(--primary);
-          font-weight: 600;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          transition: all 0.3s ease;
-          padding: 8px 16px;
-          background: rgba(37, 99, 235, 0.1);
-          border-radius: 6px;
-        }
-        
-        .read-more:hover {
-          color: var(--light);
-          background: var(--primary);
-          gap: 12px;
-        }
-        
-        .blog-loading {
-          text-align: center;
-          padding: 80px 20px;
-          color: var(--light);
-          grid-column: 1 / -1;
-        }
-        
-        .blog-loading .spinner {
-          width: 48px;
-          height: 48px;
-          border: 3px solid rgba(37, 99, 235, 0.3);
-          border-top: 3px solid var(--primary);
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-          margin: 0 auto 24px;
-        }
-        
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
+    .blog-hero p {
+      font-size: 1.25rem;
+      color: #e2e8f0;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      line-height: 1.6;
+    }
 
-        .empty-state {
-          text-align: center;
-          padding: 80px 20px;
-          color: var(--gray);
-          grid-column: 1 / -1;
-        }
+    /* Blog grid */
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 32px;
+      padding: 80px 10%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-        .empty-state i {
-          font-size: 3rem;
-          color: var(--primary);
-          margin-bottom: 20px;
-          opacity: 0.5;
-        }
+    .blog-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
 
-        @media (max-width: 768px) {
-          .blog-hero {
-            padding: 100px 0 60px;
-          }
-          
-          .blog-hero h1 {
-            font-size: 2.5rem;
-          }
-          
-          .blog-hero p {
-            font-size: 1.125rem;
-            padding: 0 20px;
-          }
-          
-          .blog-container {
-            grid-template-columns: 1fr;
-            padding: 60px 5%;
-            gap: 24px;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .blog-hero h1 {
-            font-size: 2rem;
-          }
-          
-          .blog-container {
-            padding: 40px 20px;
-          }
-          
-          .blog-card img {
-            height: 200px;
-          }
-          
-          .blog-meta {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-          }
-        }
-    </style>
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .blog-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .blog-content {
+      padding: 28px;
+    }
+
+    .blog-content h2 {
+      font-size: 1.4rem;
+      margin: 12px 0;
+      color: var(--light);
+      line-height: 1.4;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .blog-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.875rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .blog-meta i {
+      font-size: 0.75rem;
+    }
+
+    .read-more {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 6px;
+    }
+
+    .read-more:hover {
+      color: var(--light);
+      background: var(--primary);
+      gap: 12px;
+    }
+
+    .blog-loading {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--light);
+      grid-column: 1 / -1;
+    }
+
+    .blog-loading .spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(37, 99, 235, 0.3);
+      border-top: 3px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 24px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--gray);
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      .blog-hero {
+        padding: 100px 0 60px;
+      }
+
+      .blog-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .blog-hero p {
+        font-size: 1.125rem;
+        padding: 0 20px;
+      }
+
+      .blog-container {
+        grid-template-columns: 1fr;
+        padding: 60px 5%;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-hero h1 {
+        font-size: 2rem;
+      }
+
+      .blog-container {
+        padding: 40px 20px;
+      }
+
+      .blog-card img {
+        height: 200px;
+      }
+
+      .blog-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Background Animation -->
-    <div class="bg-animation" id="bgAnimation"></div>
+  <!-- Background Animation -->
+  <div class="bg-animation" id="bgAnimation"></div>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="/" class="logo">
-                <div class="logo-img">
-                    <img src="/images/favicon.png" alt="Ephraim Works Logo" />
-                </div>
-                <div class="logo-text">Ephraim M <span>Works</span></div>
-            </a>
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/services/">Services</a></li>
-                <li><a href="/portfolio/">Portfolio</a></li>
-                <li><a href="/eBooks/">eBooks</a></li>
-                <li><a href="/blog/" class="active">Blog</a></li>
-                <li class="dropdown">
-                    <a href="#" class="cta-button dropdown-toggle">
-                        Start Now <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/book-online/">Start a project</a></li>
-                        <li><a href="/schedule/">Book Consultation</a></li>
-                    </ul>
-                </li>
-            </ul>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <div class="logo-img">
+          <img src="/images/favicon.png" alt="Ephraim Works Logo" />
         </div>
-    </header>
+        <div class="logo-text">Ephraim M <span>Works</span></div>
+      </a>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/eBooks/">eBooks</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li class="dropdown">
+          <a href="#" class="cta-button dropdown-toggle">
+            Start Now <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/book-online/">Start a project</a></li>
+            <li><a href="/schedule/">Book Consultation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-    <!-- Blog Hero -->
-    <section class="blog-hero">
-      <div class="container">
-        <h1 data-aos="fade-up">Insights & Stories</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Discover the latest in web development, design trends, and digital innovation</p>
-      </div>
-    </section>
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <h1 data-aos="fade-up">Insights & Stories</h1>
+      <p data-aos="fade-up" data-aos-delay="100">Discover the latest in web development, design trends, and digital
+        innovation</p>
+    </div>
+  </section>
 
-    <!-- Blog Container -->
-    <section class="blog-container" id="blog-container">
-      <div class="blog-loading">
-        <div class="spinner"></div>
-        <p>Loading latest insights...</p>
-      </div>
-    </section>
+  <!-- Blog Container -->
+  <section class="blog-container" id="blog-container">
+    <div class="blog-loading">
+      <div class="spinner"></div>
+      <p>Loading latest insights...</p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col" data-aos="fade-up" data-aos-duration="800">
-                    <h3>Ephraim Works</h3>
-                    <p>
-                        Transforming ideas into impactful digital experiences through
-                        design precision, technical innovation, and strategic execution
-                        that drives real business results.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.tiktok.com/@ephraim_creations?is_from_webapp=1&sender_device=pc"><i
-                                class="fab fa-tiktok"></i></a>
-                        <a href="https://www.youtube.com/@EphraimCreationsKE"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.facebook.com/ephraimmutwiri2025"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310"><i
-                                class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li>
-                            <a href="/about/"><i class="fas fa-chevron-right"></i> About me</a>
-                        </li>
-                        <li>
-                            <a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a>
-                        </li>
-                        <li>
-                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a>
-                        </li>
-                        <li>
-                            <a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a>
-                        </li>
-                        <li>
-                            <a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <h3>Services</h3>
-                    <ul>
-                        <li>
-                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a>
-                        </li>
-                        <li>
-                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a>
-                        </li>
-                        <li>
-                            <a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce
-                                Development</a>
-                        </li>
-                        <li>
-                            <a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a>
-                        </li>
-                        <li>
-                            <a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a>
-                        </li>
-                        <li>
-                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a>
-                        </li>
-                        <li>
-                            <a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing &
-                                Visuals</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                    <h3>Connect</h3>
-                    <ul>
-                        <li>
-                            <a href="mailto:info@ephraimworks.online"><i
-                                    class="fas fa-envelope"></i>info@ephraimworks.online</a>
-                        </li>
-                        <li>
-                            <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873
-                            </a>
-                        </li>
-                        <li>
-                            <a><i class="fas fa-map-marker-alt"></i> Kenya-based</a>
-                        </li>
-                        <li>
-                            <a href="/schedule/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright" data-aos="fade-up" data-aos-duration="800">
-                <p>
-                    &copy; 2025 Ephraim M Works. All rights reserved. | Crafted with
-                    precision and passion <br>
-                    <i>Powered By: <a href="/about/"
-                            style="font-size: 20px; color: blueviolet; text-decoration: none;">Ephraim</a></i>
-                </p>
-            </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="800">
+          <h3>Ephraim Works</h3>
+          <p>
+            Transforming ideas into impactful digital experiences through
+            design precision, technical innovation, and strategic execution
+            that drives real business results.
+          </p>
+          <div class="social-links">
+            <a href="https://www.tiktok.com/@ephraim_creations?is_from_webapp=1&sender_device=pc"><i
+                class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@EphraimCreationsKE"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/ephraimmutwiri2025"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
-    </footer>
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <h3>Navigation</h3>
+          <ul>
+            <li>
+              <a href="/about/"><i class="fas fa-chevron-right"></i> About me</a>
+            </li>
+            <li>
+              <a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a>
+            </li>
+            <li>
+              <a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a>
+            </li>
+            <li>
+              <a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a>
+            </li>
+            <li>
+              <a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a>
+            </li>
+            <li>
+              <a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <h3>Services</h3>
+          <ul>
+            <li>
+              <a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a>
+            </li>
+            <li>
+              <a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a>
+            </li>
+            <li>
+              <a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce
+                Development</a>
+            </li>
+            <li>
+              <a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a>
+            </li>
+            <li>
+              <a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a>
+            </li>
+            <li>
+              <a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a>
+            </li>
+            <li>
+              <a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing &
+                Visuals</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <h3>Connect</h3>
+          <ul>
+            <li>
+              <a href="mailto:info@ephraimworks.online"><i class="fas fa-envelope"></i>info@ephraimworks.online</a>
+            </li>
+            <li>
+              <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873
+              </a>
+            </li>
+            <li>
+              <a><i class="fas fa-map-marker-alt"></i> Kenya-based</a>
+            </li>
+            <li>
+              <a href="/schedule/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright" data-aos="fade-up" data-aos-duration="800">
+        <p>
+          &copy; 2025 Ephraim M Works. All rights reserved. | Crafted with
+          precision and passion <br>
+          <i>Powered By: <a href="/about/"
+              style="font-size: 20px; color: blueviolet; text-decoration: none;">Ephraim</a></i>
+        </p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/254112268873" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/254112268873" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/js/index.js" defer></script>
-    <script src="/js/about.js" defer></script>
-    
-    <!-- Blog JS -->
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/about.js"></script>
+  <script src="/blog/assets/js/blog.js"></script>
+
+  <!-- Blog JS -->
 
 </body>
+
 </html>

@@ -144,7 +144,7 @@ header.shrink {
 }
 
 .logo-text {
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script";
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--light);

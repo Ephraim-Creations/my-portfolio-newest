@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{post.metaTitle}</title>
+    <meta name="description" content={post.metaDescription} />
+    <meta name="keywords" content={post.metaKeywords} />
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .post-container {
+            max-width: 1000px;
+            margin: 140px auto 100px;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Image */
+        .post-hero {
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2.5rem;
+        }
+
+        .post-hero img {
+            width: 100%;
+            height: 55vh;
+            transition: transform 0.6s ease;
+        }
+
+        .post-hero:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Title */
+        .post-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--light);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Meta Information */
+        .post-meta {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+        }
+
+        .post-meta i {
+            color: var(--primary);
+        }
+
+        /* Post Content */
+        .post-content {
+            color: #d1d5db;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .post-content p {
+            margin-bottom: 1.6rem;
+        }
+
+        .post-content h2,
+        .post-content h3 {
+            margin-top: 2.2rem;
+            margin-bottom: 1rem;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--light);
+        }
+
+        .post-content h2 {
+            font-size: 1.8rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .post-content blockquote {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .post-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .post-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .post-content a:hover {
+            border-color: var(--primary);
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--gray);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2rem;
+            }
+
+            .post-content {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+        }
+
+        .post-cta {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 4rem;
+        }
+
+        .post-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .post-cta p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-cta .cta-btn {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .post-cta .cta-btn:hover {
+            background: var(--accent);
+        }
+
+        /* Related posts */
+        .related-posts {
+            margin-top: 5rem;
+        }
+
+        .related-posts h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-card h3 {
+            padding: 1rem;
+            font-size: 1.3rem;
+            color: var(--light);
+        }
+
+        .related-card p {
+            padding: 0 1rem;
+            color: #d1d5db;
+        }
+
+        .related-card .read-more {
+            display: inline-block;
+            margin: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Share section */
+        .share-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .share-buttons a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .share-buttons a:hover {
+            color: var(--accent);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-img">
+                    <img src="/images/favicon.png" alt="Ephraim Works Logo" />
+                </div>
+                <div class="logo-text">Ephraim M <span>Works</span></div>
+            </a>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/eBooks/">eBooks</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="cta-button dropdown-toggle">
+                        Start Now <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/book-online/">Start a project</a></li>
+                        <li><a href="/schedule/">Book Consultation</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <div class="post-container" id="post-container">
+        <div class="blog-loading">
+            <div class="spinner"></div>
+            <p>Loading article...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800">
+                    <h3>Ephraim Works</h3>
+                    <p>
+                        Transforming ideas into impactful digital experiences through
+                        design precision, technical innovation, and strategic execution
+                        that drives real business results.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@ephraim_creations?is_from_webapp=1&sender_device=pc"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@EphraimCreationsKE"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/ephraimmutwiri2025"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li>
+                            <a href="/about/"><i class="fas fa-chevron-right"></i> About me</a>
+                        </li>
+                        <li>
+                            <a href="/blog/"><i class="fas fa-chevron-right"></i> Blog</a>
+                        </li>
+                        <li>
+                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> eBooks</a>
+                        </li>
+                        <li>
+                            <a href="/portfolio/"><i class="fas fa-chevron-right"></i>Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="/privacy-policy/"><i class="fas fa-chevron-right"></i>Privacy-policy</a>
+                        </li>
+                        <li>
+                            <a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Development</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Web Design</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> E-commerce
+                                Development</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> SEO Optimization</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a>
+                        </li>
+                        <li>
+                            <a href="/eBooks/"><i class="fas fa-chevron-right"></i> E-books & Guides</a>
+                        </li>
+                        <li>
+                            <a href="/services/"><i class="fas fa-chevron-right"></i> Blog Writing &
+                                Visuals</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li>
+                            <a href="mailto:info@ephraimworks.online"><i
+                                    class="fas fa-envelope"></i>info@ephraimworks.online</a>
+                        </li>
+                        <li>
+                            <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873
+                            </a>
+                        </li>
+                        <li>
+                            <a><i class="fas fa-map-marker-alt"></i> Kenya-based</a>
+                        </li>
+                        <li>
+                            <a href="/schedule/"><i class="fas fa-calendar-alt"></i> Schedule Consultation</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-aos="fade-up" data-aos-duration="800">
+                <p>
+                    &copy; 2025 Ephraim M Works. All rights reserved. | Crafted with
+                    precision and passion <br>
+                    <i>Powered By: <a href="/about/"
+                            style="font-size: 20px; color: blueviolet; text-decoration: none;">Ephraim</a></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/254112268873" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/about.js"></script>
+<script>
+    async function loadPost() {
+        const container = document.getElementById("post-container");
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get("post");
+
+        if (!slug) {
+            container.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Invalid or missing post link.</p>
+      </div>`;
+            return;
+        }
+
+        try {
+            // Try direct slug file first
+            let res = await fetch(`/blog/posts/${slug}.json?${Date.now()}`);
+            let post = null;
+
+            if (res.ok) {
+                post = await res.json();
+            } else {
+                // Fallback: Loop through post-1.json, post-2.json... until slug match found
+                let index = 1;
+                while (true) {
+                    const r = await fetch(`/blog/posts/post-${index}.json?${Date.now()}`);
+                    if (!r.ok) break;
+                    const data = await r.json();
+                    if (data.slug === slug) {
+                        post = data;
+                        break;
+                    }
+                    index++;
+                }
+            }
+
+            if (!post) throw new Error("Post not found");
+
+            // SEO + OG setup
+            document.title = post.metaTitle || post.title;
+
+            const setMeta = (name, content) => {
+                if (!content) return;
+                let tag = document.querySelector(`meta[name='${name}']`);
+                if (!tag) {
+                    tag = document.createElement("meta");
+                    tag.name = name;
+                    document.head.appendChild(tag);
+                }
+                tag.setAttribute("content", content);
+            };
+
+            const setOG = (property, content) => {
+                if (!content) return;
+                let tag = document.querySelector(`meta[property='${property}']`);
+                if (!tag) {
+                    tag = document.createElement("meta");
+                    tag.setAttribute("property", property);
+                    document.head.appendChild(tag);
+                }
+                tag.setAttribute("content", content);
+            };
+
+            setMeta("description", post.metaDescription);
+            setMeta("keywords", post.metaKeywords);
+            setOG("og:title", post.metaTitle || post.title);
+            setOG("og:description", post.metaDescription);
+            setOG("og:image", post.image);
+            setOG("og:type", "article");
+
+            // Current page URL (encoded for share)
+            const shareURL = encodeURIComponent(window.location.href);
+            const shareText = encodeURIComponent(post.title);
+
+            // Render main post (your styles preserved)
+            container.innerHTML = `
+      <article data-aos="fade-up">
+        <div class="post-hero">
+          <img src="${post.image}" alt="${post.title}">
+        </div>
+        <h1 class="post-title">${post.title}</h1>
+        <div class="post-meta">
+          <i class="fas fa-calendar-alt"></i> ${new Date(post.date).toLocaleDateString()}
+        </div>
+        <div class="post-content">${post.content}</div>
+      </article>
+
+      <!-- Share Section -->
+      <div class="share-section" data-aos="fade-up">
+        <p>Share this article:</p>
+        <div class="share-buttons">
+          <a href="https://twitter.com/intent/tweet?url=${shareURL}&text=${shareText}" target="_blank" rel="noopener">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=${shareURL}" target="_blank" rel="noopener">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=${shareURL}" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://api.whatsapp.com/send?text=${shareText}%20${shareURL}" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a class="copy-link" title="Copy link">
+            <i class="fas fa-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <section class="post-cta" data-aos="fade-up">
+        <h2>Enjoyed this article?</h2>
+        <p>Let’s turn your ideas into stunning digital experiences. Get started today!</p>
+        <a href="/book-online/" class="cta-btn">Start a Project</a>
+      </section>
+
+      <!-- Related Posts -->
+      <section class="related-posts" data-aos="fade-up">
+        <h2>More Reads You’ll Love</h2>
+        <div id="related-container" class="related-grid"></div>
+      </section>
+    `;
+
+            // Copy link handler
+            const copyBtn = container.querySelector(".copy-link");
+            if (copyBtn) {
+                copyBtn.addEventListener("click", () => {
+                    navigator.clipboard.writeText(window.location.href);
+                    copyBtn.innerHTML = "<i class='fas fa-check'></i>";
+                    setTimeout(() => (copyBtn.innerHTML = "<i class='fas fa-link'></i>"), 2000);
+                });
+            }
+
+            // Load related posts
+            loadRelated(slug);
+
+        } catch (err) {
+            container.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Sorry, we couldn’t load this post. It might have been moved or deleted.</p>
+      </div>`;
+        }
+    }
+
+    /** Load Related Posts **/
+    async function loadRelated(currentSlug) {
+        const relatedContainer = document.getElementById("related-container");
+        if (!relatedContainer) return;
+
+        const posts = [];
+        let index = 1;
+
+        while (true) {
+            const res = await fetch(`/blog/posts/post-${index}.json?${Date.now()}`);
+            if (!res.ok) break;
+            const post = await res.json();
+            posts.push(post);
+            index++;
+        }
+
+        const filtered = posts.filter(p => p.slug !== currentSlug);
+        const random = filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+        relatedContainer.innerHTML = random.map(p => `
+    <div class="related-card">
+      <img src="${p.image}" alt="${p.title}">
+      <h3>${p.title}</h3>
+      <p>${p.excerpt}</p>
+      <a href="/blog/posts/post-template.html?post=${p.slug}" class="read-more">Read More</a>
+    </div>
+  `).join('');
+    }
+
+    document.addEventListener("DOMContentLoaded", loadPost);
+</script>
+
+
+
+</body>
+
+</html>
