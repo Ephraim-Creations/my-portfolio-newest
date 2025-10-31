@@ -45,22 +45,7 @@
         <loc>https://www.ephraimworks.online/blog/</loc>
         <lastmod>2025-10-17</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Example Blog Posts (update or add dynamically later) -->
-    <url>
-        <loc>https://www.ephraimworks.online/blog/mastering-modern-web-design/</loc>
-        <lastmod>2025-10-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.ephraimworks.online/blog/how-to-build-a-converting-landing-page/</loc>
-        <lastmod>2025-10-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>1.0</priority>
     </url>
 
     <!-- Booking Pages -->
