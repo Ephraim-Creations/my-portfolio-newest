@@ -292,18 +292,18 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
+                <li><a href="/about/" class="active">About</a></li>
                 <li><a href="/services/">Services</a></li>
                 <li><a href="/portfolio/">Portfolio</a></li>
                 <li><a href="/eBooks/">eBooks</a></li>
-                <li><a href="/blog/" class="active">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li class="dropdown">
                     <a href="#" class="cta-button dropdown-toggle">
                         Start Now <i class="fas fa-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/book-online/">Start a project</a></li>
-                        <li><a href="/schedule/">Book Consultation</a></li>
+                        <li><a href="/pricing/">View Pricing</a></li>
+                        <li><a href="/schedule/">Free Consultation</a></li>
                     </ul>
                 </li>
             </ul>
@@ -359,6 +359,9 @@
                         </li>
                         <li>
                             <a href="/terms-of-services/"><i class="fas fa-chevron-right"></i>Terms</a>
+                        </li>
+                        <li>
+                            <a href="/pricing/"><i class="fas fa-chevron-right"></i>Pricing</a>
                         </li>
                     </ul>
                 </div>
@@ -435,83 +438,83 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/about.js"></script>
-<script>
-    async function loadPost() {
-        const container = document.getElementById("post-container");
-        const params = new URLSearchParams(window.location.search);
-        const slug = params.get("post");
+    <script>
+        async function loadPost() {
+            const container = document.getElementById("post-container");
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get("post");
 
-        if (!slug) {
-            container.innerHTML = `
+            if (!slug) {
+                container.innerHTML = `
       <div class="empty-state">
         <i class="fas fa-exclamation-triangle"></i>
         <p>Invalid or missing post link.</p>
       </div>`;
-            return;
-        }
-
-        try {
-            // Try direct slug file first
-            let res = await fetch(`/blog/posts/${slug}.json?${Date.now()}`);
-            let post = null;
-
-            if (res.ok) {
-                post = await res.json();
-            } else {
-                // Fallback: Loop through post-1.json, post-2.json... until slug match found
-                let index = 1;
-                while (true) {
-                    const r = await fetch(`/blog/posts/post-${index}.json?${Date.now()}`);
-                    if (!r.ok) break;
-                    const data = await r.json();
-                    if (data.slug === slug) {
-                        post = data;
-                        break;
-                    }
-                    index++;
-                }
+                return;
             }
 
-            if (!post) throw new Error("Post not found");
+            try {
+                // Try direct slug file first
+                let res = await fetch(`/blog/posts/${slug}.json?${Date.now()}`);
+                let post = null;
 
-            // SEO + OG setup
-            document.title = post.metaTitle || post.title;
-
-            const setMeta = (name, content) => {
-                if (!content) return;
-                let tag = document.querySelector(`meta[name='${name}']`);
-                if (!tag) {
-                    tag = document.createElement("meta");
-                    tag.name = name;
-                    document.head.appendChild(tag);
+                if (res.ok) {
+                    post = await res.json();
+                } else {
+                    // Fallback: Loop through post-1.json, post-2.json... until slug match found
+                    let index = 1;
+                    while (true) {
+                        const r = await fetch(`/blog/posts/post-${index}.json?${Date.now()}`);
+                        if (!r.ok) break;
+                        const data = await r.json();
+                        if (data.slug === slug) {
+                            post = data;
+                            break;
+                        }
+                        index++;
+                    }
                 }
-                tag.setAttribute("content", content);
-            };
 
-            const setOG = (property, content) => {
-                if (!content) return;
-                let tag = document.querySelector(`meta[property='${property}']`);
-                if (!tag) {
-                    tag = document.createElement("meta");
-                    tag.setAttribute("property", property);
-                    document.head.appendChild(tag);
-                }
-                tag.setAttribute("content", content);
-            };
+                if (!post) throw new Error("Post not found");
 
-            setMeta("description", post.metaDescription);
-            setMeta("keywords", post.metaKeywords);
-            setOG("og:title", post.metaTitle || post.title);
-            setOG("og:description", post.metaDescription);
-            setOG("og:image", post.image);
-            setOG("og:type", "article");
+                // SEO + OG setup
+                document.title = post.metaTitle || post.title;
 
-            // Current page URL (encoded for share)
-            const shareURL = encodeURIComponent(window.location.href);
-            const shareText = encodeURIComponent(post.title);
+                const setMeta = (name, content) => {
+                    if (!content) return;
+                    let tag = document.querySelector(`meta[name='${name}']`);
+                    if (!tag) {
+                        tag = document.createElement("meta");
+                        tag.name = name;
+                        document.head.appendChild(tag);
+                    }
+                    tag.setAttribute("content", content);
+                };
 
-            // Render main post (your styles preserved)
-            container.innerHTML = `
+                const setOG = (property, content) => {
+                    if (!content) return;
+                    let tag = document.querySelector(`meta[property='${property}']`);
+                    if (!tag) {
+                        tag = document.createElement("meta");
+                        tag.setAttribute("property", property);
+                        document.head.appendChild(tag);
+                    }
+                    tag.setAttribute("content", content);
+                };
+
+                setMeta("description", post.metaDescription);
+                setMeta("keywords", post.metaKeywords);
+                setOG("og:title", post.metaTitle || post.title);
+                setOG("og:description", post.metaDescription);
+                setOG("og:image", post.image);
+                setOG("og:type", "article");
+
+                // Current page URL (encoded for share)
+                const shareURL = encodeURIComponent(window.location.href);
+                const shareText = encodeURIComponent(post.title);
+
+                // Render main post (your styles preserved)
+                container.innerHTML = `
       <article data-aos="fade-up">
         <div class="post-hero">
           <img src="${post.image}" alt="${post.title}">
@@ -559,48 +562,48 @@
       </section>
     `;
 
-            // Copy link handler
-            const copyBtn = container.querySelector(".copy-link");
-            if (copyBtn) {
-                copyBtn.addEventListener("click", () => {
-                    navigator.clipboard.writeText(window.location.href);
-                    copyBtn.innerHTML = "<i class='fas fa-check'></i>";
-                    setTimeout(() => (copyBtn.innerHTML = "<i class='fas fa-link'></i>"), 2000);
-                });
-            }
+                // Copy link handler
+                const copyBtn = container.querySelector(".copy-link");
+                if (copyBtn) {
+                    copyBtn.addEventListener("click", () => {
+                        navigator.clipboard.writeText(window.location.href);
+                        copyBtn.innerHTML = "<i class='fas fa-check'></i>";
+                        setTimeout(() => (copyBtn.innerHTML = "<i class='fas fa-link'></i>"), 2000);
+                    });
+                }
 
-            // Load related posts
-            loadRelated(slug);
+                // Load related posts
+                loadRelated(slug);
 
-        } catch (err) {
-            container.innerHTML = `
+            } catch (err) {
+                container.innerHTML = `
       <div class="empty-state">
         <i class="fas fa-exclamation-triangle"></i>
         <p>Sorry, we couldn’t load this post. It might have been moved or deleted.</p>
       </div>`;
-        }
-    }
-
-    /** Load Related Posts **/
-    async function loadRelated(currentSlug) {
-        const relatedContainer = document.getElementById("related-container");
-        if (!relatedContainer) return;
-
-        const posts = [];
-        let index = 1;
-
-        while (true) {
-            const res = await fetch(`/blog/posts/post-${index}.json?${Date.now()}`);
-            if (!res.ok) break;
-            const post = await res.json();
-            posts.push(post);
-            index++;
+            }
         }
 
-        const filtered = posts.filter(p => p.slug !== currentSlug);
-        const random = filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
+        /** Load Related Posts **/
+        async function loadRelated(currentSlug) {
+            const relatedContainer = document.getElementById("related-container");
+            if (!relatedContainer) return;
 
-        relatedContainer.innerHTML = random.map(p => `
+            const posts = [];
+            let index = 1;
+
+            while (true) {
+                const res = await fetch(`/blog/posts/post-${index}.json?${Date.now()}`);
+                if (!res.ok) break;
+                const post = await res.json();
+                posts.push(post);
+                index++;
+            }
+
+            const filtered = posts.filter(p => p.slug !== currentSlug);
+            const random = filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            relatedContainer.innerHTML = random.map(p => `
     <div class="related-card">
       <img src="${p.image}" alt="${p.title}">
       <h3>${p.title}</h3>
@@ -608,10 +611,10 @@
       <a href="/blog/posts/post-template.html?post=${p.slug}" class="read-more">Read More</a>
     </div>
   `).join('');
-    }
+        }
 
-    document.addEventListener("DOMContentLoaded", loadPost);
-</script>
+        document.addEventListener("DOMContentLoaded", loadPost);
+    </script>
 
 
 

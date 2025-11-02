@@ -1,0 +1,31 @@
+# robots.txt for https://www.ephraimworks.online
+# Managed by Ephraim Creations
+
+User-agent: *
+# Allow all public pages
+Allow: /
+
+# Block system or private directories (adjust if you have them)
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /assets/private/
+Disallow: /node_modules/
+
+# Allow critical assets (CSS, JS, images)
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Crawl-delay (optional if server resources are limited)
+Crawl-delay: 5
+
+# Sitemap location
+Sitemap: https://www.ephraimworks.online/sitemap.xml
+
+# End of file

@@ -302,7 +302,7 @@ header.shrink {
     position: absolute;
     top: 100%;
     right: 0;
-    background: var(--card-bg);
+    background: #1e293b;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -351,8 +351,13 @@ header.shrink {
     font-size: 0.9rem;
 }
 
-.dropdown-menu a[href*="schedule"]::before {
+.dropdown-menu a[href*="pricing"]::before {
     content: '💰';
+    margin-right: 3px;
+    font-size: 0.9rem;
+}
+.dropdown-menu a[href*="schedule"]::before {
+    content: '⌚';
     margin-right: 3px;
     font-size: 0.9rem;
 }
