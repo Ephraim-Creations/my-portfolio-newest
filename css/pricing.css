@@ -10,6 +10,37 @@
       --success: #10b981;
     }
 
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  background-color: var(--secondary);
+}
 
     /* Hero Section */
     .hero {

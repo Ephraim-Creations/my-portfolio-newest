@@ -332,7 +332,7 @@
                     <div class="pricing-header">
                         <h3 class="pricing-name">Portfolio Website</h3>
                         <div class="pricing-price">
-                            <span class="price-kes">KSh 18,000 - 28,000</span>
+                            <span class="price-kes">KSh 20,000 - 28,000</span>
                         </div>
                         <div class="pricing-period">Perfect for freelancers and creatives</div>
                     </div>
@@ -429,7 +429,7 @@
                         <div class="pricing-period">For businesses looking to sell products online</div>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Up to 50 products</li>
+                        <li><i class="fas fa-check"></i> Up to 500 products</li>
                         <li><i class="fas fa-check"></i> Payment gateway integration</li>
                         <li><i class="fas fa-check"></i> Inventory management</li>
                         <li><i class="fas fa-check"></i> User-friendly admin panel</li>
@@ -540,6 +540,19 @@
             </div>
         </div>
     </section>
+
+      <!-- CTA Section -->
+  <section id="about-cta">
+    <div class="container">
+      <div class="cta-section" data-aos="zoom-in" data-aos-duration="800">
+        <h2>Need Help Finding Your plan?</h2>
+        <p>Chat with us now on WhatsApp and we’ll help you choose the perfect plan for your website.</p>
+        <a href="https://wa.me/254112268873" target="_blank" class="cta-button-light">
+          <i class="fab fa-whatsapp"></i> Chat Now
+        </a>
+      </div>
+    </div>
+  </section>
 
     <!-- Modal with form -->
     <div class="modal" id="booking-modal">
@@ -741,194 +754,16 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/index.js" defer></script>
     <script src="/js/about.js" defer></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-
-        // Modal functionality
-        const modal = document.getElementById('booking-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-        const choosePlanButtons = document.querySelectorAll('.choose-plan');
-        const bookingForm = document.getElementById('booking-form');
-        const emailInput = document.getElementById('email');
-        const phoneInput = document.getElementById('phone');
-        const emailError = document.getElementById('email-error');
-        const phoneError = document.getElementById('phone-error');
-        const loadingMessage = document.getElementById('loading-message');
-        const submitBtn = document.getElementById('submit-btn');
-        const selectedPlanDisplay = document.getElementById('selected-plan-display');
-        const selectedPlanName = document.getElementById('selected-plan-name');
-        const selectedPlanDetails = document.getElementById('selected-plan-details');
-        const selectedPlanInput = document.getElementById('selected-plan-input');
-        const changePlanBtn = document.getElementById('change-plan-btn');
-        const confirmationPopup = document.getElementById('confirmation-popup');
-        const confirmationOkBtn = document.getElementById('confirmation-ok');
-
-        // Store selected plan data
-        let currentPlan = '';
-        let currentPlanDetails = '';
-
-        // Open modal when any Choose Plan button is clicked
-        choosePlanButtons.forEach(button => {
-            button.addEventListener('click', function (e) {
-                e.preventDefault();
-                currentPlan = this.getAttribute('data-plan');
-                currentPlanDetails = this.getAttribute('data-details');
-
-                // Update the form with selected plan
-                updateSelectedPlanDisplay();
-
-                // Show modal
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close modal when X button is clicked
-        closeModalBtn.addEventListener('click', function () {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            resetForm();
-        });
-
-        // Close modal when clicking outside the modal content
-        window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                resetForm();
-            }
-        });
-
-        // Close confirmation popup
-        confirmationOkBtn.addEventListener('click', function () {
-            confirmationPopup.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        // Change plan button functionality - SIMPLE: just close modal
-        changePlanBtn.addEventListener('click', function () {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            resetForm();
-
-            // Smooth scroll to pricing section
-            document.getElementById('pricing').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-
-        // Update selected plan display
-        function updateSelectedPlanDisplay() {
-            selectedPlanName.textContent = currentPlan;
-            selectedPlanDetails.textContent = currentPlanDetails;
-            selectedPlanInput.value = currentPlan;
-        }
-
-        // Email validation
-        emailInput.addEventListener('input', function () {
-            const email = emailInput.value.trim();
-            if (!email.endsWith('@gmail.com')) {
-                emailError.style.display = 'block';
-            } else {
-                emailError.style.display = 'none';
-            }
-        });
-
-        // Phone validation - supports any country code
-        phoneInput.addEventListener('input', function () {
-            const phone = phoneInput.value.trim();
-            const phoneRegex = /^\+\d{1,4}\d{7,14}$/;
-
-            if (!phoneRegex.test(phone)) {
-                phoneError.style.display = 'block';
-            } else {
-                phoneError.style.display = 'none';
-            }
-        });
-
-        // Reset form function
-        function resetForm() {
-            bookingForm.reset();
-            loadingMessage.style.display = 'none';
-            emailError.style.display = 'none';
-            phoneError.style.display = 'none';
-            submitBtn.disabled = false;
-            currentPlan = '';
-            currentPlanDetails = '';
-        }
-
-        // Form submission
-        bookingForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Validate email and phone
-            const email = emailInput.value.trim();
-            const phone = phoneInput.value.trim();
-            let isValid = true;
-
-            if (!email.endsWith('@gmail.com')) {
-                emailError.style.display = 'block';
-                isValid = false;
-            } else {
-                emailError.style.display = 'none';
-            }
-
-            const phoneRegex = /^\+\d{1,4}\d{7,14}$/;
-            if (!phoneRegex.test(phone)) {
-                phoneError.style.display = 'block';
-                isValid = false;
-            } else {
-                phoneError.style.display = 'none';
-            }
-
-            if (isValid) {
-                // Show loading state
-                submitBtn.disabled = true;
-                loadingMessage.style.display = 'block';
-
-                // Submit the form to FormSubmit
-                const formData = new FormData(bookingForm);
-
-                fetch(bookingForm.action, {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            // Show confirmation popup instead of success message
-                            loadingMessage.style.display = 'none';
-                            modal.style.display = 'none';
-                            confirmationPopup.style.display = 'flex';
-
-                            // Reset form
-                            resetForm();
-                        } else {
-                            throw new Error('Form submission failed');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        loadingMessage.style.display = 'none';
-                        alert('There was an error submitting your form. Please try again or contact us directly.');
-                        submitBtn.disabled = false;
-                    });
-            }
-        });
-    </script>
+    <script src="/js/price.js" defer></script>
 </body>
 
 </html>
