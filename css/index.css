@@ -494,7 +494,7 @@ header.shrink {
 }
 
 .hero-content h1 {
-  font-size: 3.8rem;
+  font-size: 2.8rem;
   margin-bottom: 25px;
   line-height: 1.1;
 }
@@ -543,7 +543,7 @@ header.shrink {
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
   position: relative;
-  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+ /* transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);*/
   transition: transform 0.5s;
 }
 
@@ -1166,7 +1166,7 @@ header.shrink {
 .service-card:hover .service-icon {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
-  transform: rotateY(180deg);
+  transform: rotateY(10deg);
 }
 
 .service-card h3 {
@@ -1408,7 +1408,13 @@ header.shrink {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.178);
+}
+.blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .blog-content {

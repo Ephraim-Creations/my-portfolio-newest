@@ -112,6 +112,7 @@
 }
 
 .btn-primary:hover {
+    background: none;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
 }
@@ -360,7 +361,7 @@
         .service-card:hover .service-icon {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
-            transform: rotateY(180deg);
+            transform: rotateY(0deg);
         }
 
         .service-card h3 {
