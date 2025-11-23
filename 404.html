@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7c3aed;
+      --accent: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --success: #10b981;
+      --bg-color: #0f172a;
+      --header-bg: rgba(15, 23, 42, 0.95);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --header-height: 100px;
+      --header-shrink-height: 70px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--light);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .wrapper {
+      max-width: 650px;
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 40px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: 110px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: var(--gray);
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--light);
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: var(--primary-dark);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .accent-line {
+      width: 70px;
+      height: 4px;
+      background: var(--accent);
+      margin: 15px auto 25px auto;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="wrapper">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <div class="accent-line"></div>
+    <p>
+      The page you are looking for does not exist or may have been moved.  
+      You can return to the homepage and continue browsing.
+    </p>
+    <a href="/about/">Learn more about me</a>
+  </div>
+
+</body>
+</html>
