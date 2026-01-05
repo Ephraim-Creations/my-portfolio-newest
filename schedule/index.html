@@ -112,7 +112,7 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/">Home</a></li>
-                <li><a href="/about/" class="active">About</a></li>
+                <li><a href="/about/">About</a></li>
                 <li><a href="/services/">Services</a></li>
                 <li><a href="/portfolio/">Portfolio</a></li>
                 <li><a href="/eBooks/">eBooks</a></li>
@@ -123,7 +123,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="/pricing/">View Pricing</a></li>
-                        <li><a href="/schedule/">Free Consultation</a></li>
+                        <li><a href="/schedule/" class="active">Free Consultation</a></li>
                     </ul>
                 </li>
             </ul>
@@ -134,36 +134,36 @@
     <main class="consultation-main">
         <div class="consultation-hero">
             <div class="hero-content">
+                <p><i class="my-ribbon">Happy New Year 2026! Free consultation... ends 20th January </i></p>
                 <h1>Let's Create Something <span class="accent-text">Amazing</span> Together</h1>
-                <p class="hero-subtitle">Schedule your professional consultation and take the first step toward
-                    transforming your digital presence</p>
+                <p class="hero-subtitle">Schedule your professional consultation in just 2 minutes</p>
                 <div class="hero-features">
                     <div class="feature-item">
                         <div class="feature-icon">🎯</div>
-                        <span>Expert Strategy</span>
+                        <span>Quick & Easy</span>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">💡</div>
-                        <span>Creative Solutions</span>
+                        <span>No Commitment</span>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">🚀</div>
-                        <span>Proven Results</span>
+                        <span>Fast Response</span>
                     </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="floating-card card-1">
                     <div class="card-icon">⚡</div>
-                    <h4>Fast Turnaround</h4>
+                    <h4>1-Minute Form</h4>
                 </div>
                 <div class="floating-card card-2">
                     <div class="card-icon">⭐</div>
-                    <h4>5-Star Service</h4>
+                    <h4>Email Confirmation</h4>
                 </div>
                 <div class="floating-card card-3">
                     <div class="card-icon">💬</div>
-                    <h4>Direct Communication</h4>
+                    <h4>Quick Follow-up</h4>
                 </div>
             </div>
         </div>
@@ -171,169 +171,392 @@
         <div class="consultation-container">
             <div class="booking-card">
                 <div class="card-header">
-                    <h2>Schedule Your Consultation</h2>
-                    <p>Fill out the form below and we'll connect via WhatsApp to discuss your project</p>
-                    <div class="availability-badge">
-                        <span class="badge-dot"></span>
-                        Available Monday - Friday
+                    <h2>Start Your Project</h2>
+                    <p>Share basic details and we'll contact you within 24 hours</p>
+                    <div class="progress-indicator">
+                        <div class="progress-step active">1</div>
+                        <div class="progress-step">2</div>
+                        <div class="progress-step">3</div>
+                        <span class="progress-text">3 simple steps</span>
                     </div>
                 </div>
 
-                <form class="booking-form" id="bookingForm">
-                    <div class="form-section">
-                        <h3 class="section-title">Personal Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required placeholder="First Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name (optional) </label>
-                                <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+                <form class="booking-form" id="bookingForm" method="POST"
+                    action="https://formsubmit.co/ephraimmutwiri01@gmail.com">
+                    <!-- FormSubmit.co configuration -->
+                    <input type="hidden" name="_subject" value="New Consultation Request - Portfolio Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="?success=true#successMessage">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <!-- Step 1: Basic Info -->
+                    <div class="form-step active" id="step1">
+                        <h3 class="section-title">Tell us about yourself</h3>
+
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="First & Last name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Contact Method *</label>
+                            <div class="contact-options">
+                                <label class="contact-option">
+                                    <input type="radio" name="contactMethod" value="email" checked>
+                                    <span class="option-content">
+                                        <span class="option-icon">📧</span>
+                                        <span class="option-text">Email</span>
+                                    </span>
+                                </label>
+                                <label class="contact-option">
+                                    <input type="radio" name="contactMethod" value="whatsapp">
+                                    <span class="option-content">
+                                        <span class="option-icon">💬</span>
+                                        <span class="option-text">WhatsApp</span>
+                                    </span>
+                                </label>
+                                <label class="contact-option">
+                                    <input type="radio" name="contactMethod" value="phone">
+                                    <span class="option-content">
+                                        <span class="option-icon">📞</span>
+                                        <span class="option-text">Phone Call</span>
+                                    </span>
+                                </label>
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+254 xxxxxxxxxx">
-                            </div>
+                        <div class="form-actions">
+                            <button type="button" class="next-btn" onclick="nextStep()">
+                                Next: Project Details →
+                            </button>
                         </div>
                     </div>
 
-                    <div class="form-section">
-                        <h3 class="section-title">Project Details</h3>
+                    <!-- Step 2: Project Details -->
+                    <div class="form-step" id="step2">
+                        <h3 class="section-title">What do you need help with?</h3>
+
                         <div class="form-group">
-                            <label for="service">Service Type *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select your preferred service</option>
-
-                                <!-- Web Design & Development -->
-                                <option value="web-design-redesign">
-                                    Web Design & Redesign
-                                </option>
-                                <option value="wordpress-custom-websites">
-                                    WordPress & Custom Websites
-                                </option>
-                                <option value="ecommerce-development">
-                                    E-commerce Development
-                                </option>
-                                <option value="portfolio-landing-pages">
-                                    Portfolio & Landing Page Design
-                                </option>
-                                <option value="website-maintenance">
-                                    Website Maintenance
-                                </option>
-
-                                <!-- Branding & Visual Identity -->
-                                <option value="logo-visual-identity">
-                                    Logo & Visual Identity Design
-                                </option>
-                                <option value="social-media-design">
-                                    Social Media Design Systems
-                                </option>
-                                <option value="marketing-print-media">
-                                    Marketing Collateral & Print Media
-                                </option>
-                                <option value="merch-presentation-design">
-                                    T-shirt, Merch & Presentation Design
-                                </option>
-
-                                <!-- Digital Marketing & SEO -->
-                                <option value="seo-optimization">
-                                    SEO Strategy & Optimization
-                                </option>
-                                <option value="analytics-reporting">
-                                    Analytics, Insights & Reporting
-                                </option>
-
-                                <option value="custom-project">
-                                    Custom Project / Combination
-                                </option>
-                            </select>
+                            <label>Service Category *</label>
+                            <div class="service-categories">
+                                <label class="category-option">
+                                    <input type="radio" name="serviceCategory" value="website" required>
+                                    <span class="category-content">
+                                        <span class="category-icon">🌐</span>
+                                        <span class="category-text">Website</span>
+                                        <span class="category-subtext">Design & Development</span>
+                                    </span>
+                                </label>
+                                <label class="category-option">
+                                    <input type="radio" name="serviceCategory" value="branding" required>
+                                    <span class="category-content">
+                                        <span class="category-icon">🎨</span>
+                                        <span class="category-text">Branding</span>
+                                        <span class="category-subtext">Logo & Visual Identity</span>
+                                    </span>
+                                </label>
+                                <label class="category-option">
+                                    <input type="radio" name="serviceCategory" value="marketing" required>
+                                    <span class="category-content">
+                                        <span class="category-icon">📈</span>
+                                        <span class="category-text">Marketing</span>
+                                        <span class="category-subtext">SEO & Analytics</span>
+                                    </span>
+                                </label>
+                                <label class="category-option">
+                                    <input type="radio" name="serviceCategory" value="multiple" required>
+                                    <span class="category-content">
+                                        <span class="category-icon">✨</span>
+                                        <span class="category-text">Multiple</span>
+                                        <span class="category-subtext">Combination of services</span>
+                                    </span>
+                                </label>
+                                <label class="category-option">
+                                    <input type="radio" name="serviceCategory" value="not-sure" required>
+                                    <span class="category-content">
+                                        <span class="category-icon">🤔</span>
+                                        <span class="category-text">Not Sure</span>
+                                        <span class="category-subtext">Need guidance</span>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="budget">Project Budget (KES) *</label>
-                            <select id="budget" name="budget" required>
-                                <option value="">Select your budget range</option>
-
-                                <!-- Website Development Plans -->
-                                <option value="starter-website">KSh 20,000 - Starter Website</option>
-                                <option value="professional-website">KSh 30,000 - Professional Website</option>
-                                <option value="enterprise-website">KSh 50,000+ - Enterprise Website</option>
-
-                                <!-- Website Management Plans -->
-                                <option value="basic-management">KSh 5,000/month - Basic Management</option>
-                                <option value="standard-management">KSh 9,999/month - Standard Management</option>
-                                <option value="premium-management">KSh 14,999/month - Premium Management</option>
-
-                                <!-- Custom Budget Ranges -->
-                                <option value="custom-15-25">KSh 15,000 - 25,000 - Small Project</option>
-                                <option value="custom-25-40">KSh 25,000 - 40,000 - Medium Project</option>
-                                <option value="custom-40-60">KSh 40,000 - 60,000 - Large Project</option>
-                                <option value="custom-60-plus">KSh 60,000+ - Enterprise Project</option>
-
-                                <!-- Not Sure Option -->
-                                <option value="not-sure">Not Sure - Need Quote</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Project Overview *</label>
-                            <textarea id="message" name="message" rows="4"
-                                placeholder="Tell us about your project goals, timeline, and any specific requirements..."
+                            <label for="projectDesc">Brief Description *</label>
+                            <textarea id="projectDesc" name="projectDescription" rows="3"
+                                placeholder="What's your project about? What are you trying to achieve? (2-3 sentences)"
                                 required></textarea>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h3 class="section-title">Preferred Consultation Time</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="date">Preferred Date *</label>
-                                <input type="date" id="date" name="date" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="time">Preferred Time *</label>
-                                <select id="time" name="time" required>
-                                    <option value="">Select time</option>
-                                    <option value="09:00">Morning (8-11 a.m)</option>
-                                    <option value="12:00">Afternoon (12-3 p.m)</option>
-                                    <option value="16:00">Evening (6-8 p.m)</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label for="timeline">When would you like to start? *</label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="">Select timeline</option>
+                                <option value="asap">ASAP (Within 1 week)</option>
+                                <option value="2-4weeks">In 2-4 weeks</option>
+                                <option value="1-2months">In 1-2 months</option>
+                                <option value="flexible">Flexible / Just exploring</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="back-btn" onclick="prevStep()">
+                                ← Back
+                            </button>
+                            <button type="button" class="next-btn" onclick="nextStep()">
+                                Next: Final Step →
+                            </button>
                         </div>
                     </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">Schedule Consultation</span>
-                            <span class="btn-loading" style="display: none;">
-                                <span class="loading-spinner"></span>
-                                Processing...
-                            </span>
-                        </button>
-                        <p class="form-note">
-                            By submitting this form, you agree to be contacted via WhatsApp for your consultation.
-                        </p>
+                    <!-- Step 3: Schedule & Budget -->
+                    <div class="form-step" id="step3">
+                        <h3 class="section-title">When works best for you?</h3>
+
+                        <div class="form-group">
+                            <label for="preferredDay">Best day for consultation *</label>
+                            <select id="preferredDay" name="preferredDay" required>
+                                <option value="">Select day</option>
+                                <option value="any">Any weekday</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="weekend">Weekend (if available)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Best time of day *</label>
+                            <div class="time-options">
+                                <label class="time-option">
+                                    <input type="radio" name="timeOfDay" value="morning" required>
+                                    <span class="time-content">
+                                        <span class="time-text">Morning</span>
+                                        <span class="time-subtext">8 AM - 12 PM</span>
+                                    </span>
+                                </label>
+                                <label class="time-option">
+                                    <input type="radio" name="timeOfDay" value="afternoon" required>
+                                    <span class="time-content">
+                                        <span class="time-text">Afternoon</span>
+                                        <span class="time-subtext">12 PM - 5 PM</span>
+                                    </span>
+                                </label>
+                                <label class="time-option">
+                                    <input type="radio" name="timeOfDay" value="evening" required>
+                                    <span class="time-content">
+                                        <span class="time-text">Evening</span>
+                                        <span class="time-subtext">5 PM - 8 PM</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget Range (Optional)</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select if you have a budget in mind</option>
+                                <option value="under-20k">Under KSh 20,000</option>
+                                <option value="20k-50k">KSh 20,000 - 50,000</option>
+                                <option value="50k-100k">KSh 50,000 - 100,000</option>
+                                <option value="100k-plus">KSh 100,000+</option>
+                                <option value="not-sure">Not sure / Need quote</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="back-btn" onclick="prevStep()">
+                                ← Back
+                            </button>
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-text">Schedule Consultation</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <span class="loading-spinner"></span>
+                                    Sending...
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </form>
 
+                <!-- Success Message (Shown after form submission) -->
                 <div class="booking-success" id="successMessage" style="display: none;">
                     <div class="success-icon">✓</div>
-                    <h3>Consultation Scheduled Successfully!</h3>
-                    <p>We've received your request and will contact you via WhatsApp shortly to confirm your
-                        consultation time.</p>
-                    <div class="success-details" id="successDetails"></div>
+                    <h3>Perfect! We'll contact you shortly</h3>
+                    <p>Thank you for your submission. We've received your consultation request and will contact you via
+                        your preferred method within 24 hours.</p>
+                    <div class="success-details">
+                        <p><strong>What happens next:</strong></p>
+                        <ul>
+                            <li>You'll receive a confirmation email</li>
+                            <li>We'll review your project details</li>
+                            <li>We'll contact you to schedule the consultation</li>
+                            <li>Prepare any questions you have for our meeting</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Check for success parameter in URL
+        if (window.location.search.includes('success=true')) {
+            document.querySelector('.booking-form').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            document.querySelectorAll('.progress-step').forEach(step => step.classList.add('active'));
+        }
+
+        function nextStep() {
+            // Validate current step before proceeding
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
+            if (currentStep < totalSteps) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep++;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                updateProgressIndicator();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep--;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                updateProgressIndicator();
+            }
+        }
+
+        function updateProgressIndicator() {
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                if (index + 1 <= currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        function validateStep(stepNumber) {
+            const stepElement = document.getElementById(`step${stepNumber}`);
+            const requiredInputs = stepElement.querySelectorAll('[required]');
+            let isValid = true;
+
+            // Clear previous error messages
+            stepElement.querySelectorAll('.error-message').forEach(el => el.remove());
+
+            for (const input of requiredInputs) {
+                if (!input.value.trim()) {
+                    showError(input, 'This field is required');
+                    isValid = false;
+                } else if (input.type === 'email' && !isValidEmail(input.value)) {
+                    showError(input, 'Please enter a valid email address');
+                    isValid = false;
+                }
+            }
+
+            // Validate radio groups
+            const radioGroups = stepElement.querySelectorAll('.contact-options, .service-categories, .time-options');
+            for (const group of radioGroups) {
+                const radioName = group.querySelector('input[type="radio"]').name;
+                const selected = stepElement.querySelector(`input[name="${radioName}"]:checked`);
+                if (!selected) {
+                    const firstLabel = group.querySelector('label');
+                    showError(firstLabel, 'Please select an option');
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) {
+                // Scroll to first error
+                const firstError = stepElement.querySelector('.error-message');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            return isValid;
+        }
+
+        function showError(input, message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.color = '#ef4444';
+            errorDiv.style.fontSize = '0.85rem';
+            errorDiv.style.marginTop = '4px';
+            errorDiv.style.fontWeight = '500';
+
+            // Insert after the input or its container
+            const parent = input.closest('.form-group') || input.parentNode;
+            parent.appendChild(errorDiv);
+
+            // Add error styling to input
+            input.style.borderColor = '#ef4444';
+            input.addEventListener('input', function () {
+                this.style.borderColor = '';
+                errorDiv.remove();
+            }, { once: true });
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Form submission handling
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            // Validate all steps before submission
+            for (let i = 1; i <= totalSteps; i++) {
+                if (!validateStep(i)) {
+                    e.preventDefault();
+                    // Go to first step with error
+                    document.getElementById(`step${currentStep}`).classList.remove('active');
+                    currentStep = i;
+                    document.getElementById(`step${currentStep}`).classList.add('active');
+                    updateProgressIndicator();
+                    return;
+                }
+            }
+
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'flex';
+            submitBtn.disabled = true;
+
+            // Form will submit normally to FormSubmit.co
+        });
+
+        // Auto-scroll to success message if success parameter exists
+        window.addEventListener('load', function () {
+            if (window.location.search.includes('success=true')) {
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -413,8 +636,8 @@
                     <h3>Connect</h3>
                     <ul>
                         <li>
-                            <a href="mailto:info@ephraimworks.online"><i
-                                    class="fas fa-envelope"></i>info@ephraimworks.online</a>
+                            <a href="mailto:info@ephraimcreations.co.ke"><i
+                                    class="fas fa-envelope"></i>info@ephraimcreations.co.ke</a>
                         </li>
                         <li>
                             <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873
@@ -453,7 +676,7 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/js/schedule.js"></script>
+    <script src="/js/schele.js"></script>
 
 </body>
 

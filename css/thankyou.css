@@ -1,0 +1,100 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+  --accent: #f59e0b;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --success: #10b981;
+  --bg-color: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: radial-gradient(
+    circle at top,
+    rgba(37, 99, 235, 0.15),
+    var(--bg-color)
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+}
+
+.thank-you-container {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.thank-you-card {
+  max-width: 420px;
+  margin: auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--gray);
+  margin-bottom: 1.2rem;
+}
+
+.info {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--light);
+  margin-bottom: 1.5rem;
+}
+
+.redirect-text {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}

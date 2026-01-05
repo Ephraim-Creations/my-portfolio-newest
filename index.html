@@ -47,13 +47,15 @@
 
   <!-- Fonts & Styles (keep same as site) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/css/index.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
 
   <!-- Structured Data: Organization + Person + Service -->
   <script type="application/ld+json">
@@ -128,8 +130,8 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/" class="active">About</a></li>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/eBooks/">eBooks</a></li>
@@ -147,584 +149,466 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-container">
-      <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-          Leading <span>Web Developer in Kenya</span> Building High-Performance Digital Experiences
-        </h1>
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container hero-container">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+      <p><i class="my-ribbon" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">Happy New Year 2026! </i></p>
+      <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="300" data-aos-easing="ease-out-back">
+        Leading <span class="highlight-text" data-aos="text-focus" data-aos-duration="1000" data-aos-delay="500">Web Developer in Kenya</span> Building High-Performance Experiences
+      </h1>
 
-        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-          I am Ephraim Mutwiri, a full-stack web developer, web designer, and SEO specialist in Kenya.
-          As the founder of Ephraim Creations, I build modern, scalable websites that are optimized to rank,
-          convert, and give small businesses, corporates, and creators a stronger digital presence.
-          Every website is engineered for speed, mobile performance, and long-term search visibility.
-        </p>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-easing="ease-out-sine">
+        I am Ephraim Mutwiri, a full-stack web developer, web designer, and SEO specialist in Kenya.
+        As the founder of Ephraim Creations, I build modern, scalable websites that are optimized to rank,
+        convert, and give small businesses, corporates, and creators a stronger digital presence.
+        Every website is engineered for speed, mobile performance, and long-term search visibility.
+      </p>
 
-        <div class="hero-buttons" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-          <a href="/portfolio/" class="cta-button">Explore My Work</a>
-          <a href="/pricing/" class="secondary-button">Get Started Now</a>
-        </div>
-      </div>
-
-      <div class="hero-video" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-        <iframe src="https://www.youtube.com/embed/oQKEHS7qlVQ?autoplay=0&mute=0&loop=1&playlist=oQKEHS7qlVQ&rel=0"
-          title="Ephraim Mutwiri – Web Developer in Kenya"
-          aria-label="Introduction to Ephraim Creations services and portfolio" loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700" data-aos-easing="ease-out-cubic">
+        <a href="/portfolio/" class="cta-button" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800">Explore My Work</a>
+        <a href="/pricing/" class="secondary-button" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="900">Get Started Now</a>
       </div>
     </div>
-  </section>
 
-
-  <!-- Partnership Section -->
-  <section class="partnership-section">
-    <div class="container">
-      <h2 class="section-title">PARTNERSHIP #2OSTORESFORKENYA</h2>
-
-      <div class="partnership-content">
-        <div class="partnership-text">
-          <h3>E-commerce Made Affordable<br>Just Ksh. 23,000</h3>
-          <p><span class="highlight">BamilByte Technologies</span> & <span class="highlight">Ephraim Creations</span>
-            partner to help Kenyan businesses establish their digital presence with complete e-commerce solutions at
-            Ksh. 23,000.</p>
-
-          <div class="features-grid">
-            <div class="feature-item">
-              <i class="fas fa-store feature-icon"></i>
-              <span>Professional Store</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-bullseye feature-icon"></i>
-              <span>Brand Positioning</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-chart-line feature-icon"></i>
-              <span>Marketing Strategy</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-credit-card feature-icon"></i>
-              <span>Payment Integration</span>
-            </div>
-          </div>
-
-          <div class="solution-text">
-            Complete E-commerce Solution • Marketing Strategy Included • Professional Brand Positioning
-          </div>
-
-          <!-- CTA Buttons Below Text -->
-          <div class="text-cta-buttons">
-            <a href="https://20stores.bamilbyte.com/#form" class="btn btn-primary" target="_blank">
-              <i class="fas fa-user-plus"></i> Register Now
-            </a>
-            <a href="https://20stores.bamilbyte.com/#about" class="btn btn-secondary" target="_blank">
-              <i class="fas fa-info-circle"></i> Get Info
-            </a>
-          </div>
-        </div>
-
-        <div class="partnership-logos">
-          <div class="partner-logo floating">
-            <div class="logo-image">
-              <!-- Replace with actual BamilByte Technologies logo -->
-
-              <img src="/images/bb.png" alt="BamilByte Technologies">
-            </div>
-            <div class="partner-name">BamilByte Technologies</div>
-            <div class="partner-description">Technology & Development Expert</div>
-          </div>
-
-          <div class="partner-logo floating" style="animation-delay: 0.5s;">
-            <div class="logo-image">
-              <img src="/images/ectechy-logo.png" alt="Ephraim Creations">
-            </div>
-            <div class="partner-name">Ephraim Creations</div>
-            <div class="partner-description">Creative Design & Branding</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Campaign CTA Section-->
-      <div class="campaign-cta">
-        <div class="campaign-badge">Special Campaign Price</div>
-        <div class="campaign-price">Ksh.23k</div>
-        <div class="campaign-note">Limited time offer</div>
-        <div class="cta-buttons">
-          <a href="https://20stores.bamilbyte.com/#form" class="btn btn-primary" target="_blank">
-            <i class="fas fa-user-plus"></i> Register Now
-          </a>
-          <a href="https://20stores.bamilbyte.com/#about" class="btn btn-secondary" target="_blank">
-            <i class="fas fa-info-circle"></i> Get Info
-          </a>
-        </div>
-      </div>
-
-      <div class="partnership-benefits">
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h4 class="benefit-title">Technical Excellence</h4>
-          <p>Robust e-commerce platforms built with the latest technologies</p>
-        </div>
-
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-paint-brush"></i>
-          </div>
-          <h4 class="benefit-title">Creative Design</h4>
-          <p>Visually appealing stores that reflect your brand identity</p>
-        </div>
-
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h4 class="benefit-title">Marketing Strategy</h4>
-          <p>Comprehensive plans to drive traffic and increase sales</p>
-        </div>
-
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-credit-card"></i>
-          </div>
-          <h4 class="benefit-title">Payment Integration</h4>
-          <p>Secure payment systems for seamless transactions</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-        <h2>Ephraims Technical Mastery</h2>
-        <p>
-          Integrating design precision with advanced development skills to
-          craft fast, secure, and scalable digital experiences.
-        </p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-card" data-aos="fade-up" data-aos-duration="800">
-          <div class="skill-icon">
-            <i class="fab fa-wordpress"></i>
-          </div>
-          <h3>WordPress Development</h3>
-          <p>
-            Building custom, performance-optimized WordPress websites with
-            tailored themes, plugins, and seamless CMS integration for
-            effortless content management.
-          </p>
-        </div>
-
-        <div class="skill-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-          <div class="skill-icon">
-            <i class="fab fa-js-square"></i>
-          </div>
-          <h3>Advanced JavaScript</h3>
-          <p>
-            Developing dynamic, high-performance interfaces using modern ES6+
-            syntax, API integrations, and modular architecture for enhanced
-            scalability.
-          </p>
-        </div>
-
-        <div class="skill-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-          <div class="skill-icon">
-            <i class="fab fa-react"></i>
-          </div>
-          <h3>React Ecosystem</h3>
-          <p>
-            Creating interactive and efficient user experiences with React and
-            Next.js, leveraging reusable components and optimized rendering
-            techniques.
-          </p>
-        </div>
-
-        <div class="skill-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-          <div class="skill-icon">
-            <i class="fab fa-node-js"></i>
-          </div>
-          <h3>Backend Engineering</h3>
-          <p>
-            Developing reliable server-side logic with Node.js and Express,
-            ensuring secure data flow and seamless API communication for
-            modern web applications.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-        <h2>Comprehensive Digital Solutions</h2>
-        <p>
-          End-to-end services designed to elevate your digital presence and
-          drive business growth.
-        </p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card" data-aos="flip-left" data-aos-duration="800">
-          <div class="service-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Web Design & Development</h3>
-          <p>
-            Modern, responsive websites that convert visitors into customers
-            and deliver exceptional user experiences across all devices.
-          </p>
-        </div>
-        <div class="service-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
-          <div class="service-icon">
-            <i class="fas fa-pen-nib"></i>
-          </div>
-          <h3>Content Creation</h3>
-          <p>
-            Compelling content that tells your story effectively, engages your
-            audience, and drives meaningful connections with your brand.
-          </p>
-        </div>
-        <div class="service-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="200">
-          <div class="service-icon">
-            <i class="fas fa-palette"></i>
-          </div>
-          <h3>Branding & Logo Design</h3>
-          <p>
-            Memorable brand identities that make lasting impressions and
-            communicate your unique value proposition effectively.
-          </p>
-        </div>
-        <div class="service-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="300">
-          <div class="service-icon">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <h3>eBook Design</h3>
-          <p>
-            Professional digital publications that captivate readers,
-            establish authority, and generate valuable leads for your
-            business.
-          </p>
-        </div>
-        <div class="service-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="400">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Digital Marketing</h3>
-          <p>
-            Strategic campaigns that drive growth and engagement, leveraging
-            data-driven insights to maximize your ROI.
-          </p>
-        </div>
-        <div class="service-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="500">
-          <div class="service-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <h3>Business Consulting</h3>
-          <p>
-            Strategic guidance to accelerate your business growth, optimize
-            operations, and capitalize on emerging opportunities.
-          </p>
-        </div>
-      </div>
-      <div class="services-cta" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-        <a href="/pricing/" class="cta-button">Start Your Project</a>
-        <a href="/services/" class="secondary-button" style="margin-left: 20px">Explore All Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-        <h2>Strategic Implementations</h2>
-        <p>
-          A curated selection of projects demonstrating design precision,
-          development excellence, and measurable digital impact.
-        </p>
-      </div>
-
-      <div class="portfolio-grid">
-        <!-- Project: Mulachap Ventures Loan Consultancy -->
-        <div class="portfolio-item" data-aos="zoom-in" data-aos-duration="800">
-          <div class="portfolio-img">
-            <img src="/images/Mulachap-v-mockup.jpg" alt="Mulachap Ventures Loan Consultancy Platform" loading="lazy" />
-          </div>
-
-          <div class="portfolio-content">
-            <h3>Mulachap Ventures – Loan Consultancy Platform</h3>
-            <p>
-              A digital loan consultancy system designed to help clients find
-              the right financing options quickly. The platform allows users
-              to submit loan applications, get eligibility assessments, and
-              connect with consultants for tailored financial advice. Built
-              with a Node.js backend and a responsive frontend for smooth user
-              experience and efficient data handling.
-            </p>
-
-            <div class="portfolio-tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">SQLite</span>
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">Responsive Design</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project: TechShedd E-Commerce Store -->
-        <div class="portfolio-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
-          <div class="portfolio-img">
-            <img src="/images/techshedd.jpg" alt="TechShedd E-Commerce Store" loading="lazy" />
-          </div>
-
-          <div class="portfolio-content">
-            <h3>TechShedd E-Commerce Store</h3>
-            <p>
-              A fully functional online store designed for tech enthusiasts.
-              Developed on Wix Studio with custom layouts, integrated cart and
-              checkout features, and optimized user flows for higher
-              conversions. The design emphasizes speed, responsiveness, and a
-              seamless shopping experience across all devices.
-            </p>
-
-            <div class="portfolio-tags">
-              <span class="tag">Wix Studio</span>
-              <span class="tag">E-Commerce</span>
-              <span class="tag">Custom Design</span>
-              <span class="tag">UX Optimization</span>
-              <span class="tag">SEO Ready</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project: Luxury Car Rental Services -->
-        <div class="portfolio-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
-          <div class="portfolio-img">
-            <img src="/images/cars-rent.jpg" alt="Luxury Car Rental Services Platform" loading="lazy" />
-          </div>
-
-          <div class="portfolio-content">
-            <h3>Luxury Car Rental Services</h3>
-            <p>
-              A sleek and dynamic car rental platform offering premium
-              vehicles for clients seeking comfort and class. The system
-              allows users to browse available cars, check pricing, and make
-              online bookings with real-time availability. Built with Node.js
-              for backend functionality and a responsive frontend using HTML,
-              CSS, and JavaScript to deliver a smooth, high-end experience.
-            </p>
-
-            <div class="portfolio-tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Responsive Design</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!-- Blog Section -->
-<section id="blog">
-  <div class="container">
-    <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-      <h2>Strategic Insights</h2>
-      <p>Exploring the intersection of technology, business strategy, and user experience.</p>
-    </div>
-
-    <div class="blog-grid">
-
-      <!-- Blog 1 -->
-      <div class="blog-card" data-aos="fade-up" data-aos-duration="800">
-        <div class="blog-img">
-          <img src="/blog/assets/images/web-good.jpg" alt="What Makes a Good Website in 2025 and 2026" loading="lazy">
-        </div>
-        <div class="blog-content">
-          <h3>What Makes a Good Website in 2025 and 2026?</h3>
-          <div class="blog-meta">
-            <span>Nov 2025</span>
-            <span>5 min read</span>
-          </div>
-          <p>A good website in 2025 and 2026 is fast, mobile-first, visually appealing, and built to convert. Here’s what separates modern, high-performing sites from outdated ones.</p>
-          <a href="/blog/posts/post-template.html?post=what-makes-a-good-website-2025-and-2026" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- Blog 2 -->
-      <div class="blog-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <div class="blog-img">
-          <img src="/blog/assets/images/web-visitor.jpg" alt="How a Well-Designed Website Builds Trust" loading="lazy">
-        </div>
-        <div class="blog-content">
-          <h3>How a Well-Designed Website Builds Trust and Converts Visitors into Clients</h3>
-          <div class="blog-meta">
-            <span> Nov 2025</span>
-            <span>6 min read</span>
-          </div>
-          <p>Your website is often the first impression potential clients get. A well-designed website builds trust, reflects professionalism, and turns curious visitors into loyal customers.</p>
-          <a href="/blog/posts/post-template.html?post=how-a-well-designed-website-builds-trust-and-converts-visitors" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- Blog 3 -->
-      <div class="blog-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-        <div class="blog-img">
-          <img src="/blog/assets/images/web-cheap.jpg" alt="The Hidden Costs of a Cheap Website" loading="lazy">
-        </div>
-        <div class="blog-content">
-          <h3>The Hidden Costs of a Cheap Website</h3>
-          <div class="blog-meta">
-            <span>Nov 2025</span>
-            <span>7 min read</span>
-          </div>
-          <p>A cheap website may seem like a good deal, but poor performance, downtime, and weak SEO can cost far more over time. Here’s what most people don’t realize about budget websites.</p>
-          <a href="/blog/posts/post-template.html?post=the-hidden-costs-of-a-cheap-website" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
+    <div class="hero-video" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600" data-aos-easing="ease-out-cubic">
+      <iframe src="https://www.youtube.com/embed/oQKEHS7qlVQ?autoplay=0&mute=0&loop=1&playlist=oQKEHS7qlVQ&rel=0"
+        title="Ephraim Mutwiri – Web Developer in Kenya"
+        aria-label="Introduction to Ephraim Creations services and portfolio" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 </section>
 
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <div class="section-title" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2>Ephraims Technical Mastery</h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        Integrating design precision with advanced development skills to
+        craft fast, secure, and scalable digital experiences.
+      </p>
+    </div>
 
-  <!-- Reviews Section -->
-  <section id="reviews">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-        <h2>Client Success Stories</h2>
-        <p>
-          Partnerships that have driven measurable business transformation.
+    <div class="skills-grid">
+      <div class="skill-card" data-aos="flip-up" data-aos-duration="800" data-aos-easing="ease-out-back">
+        <div class="skill-icon" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+          <i class="fab fa-wordpress"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">WordPress Development</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+          Building custom, performance-optimized WordPress websites with
+          tailored themes, plugins, and seamless CMS integration for
+          effortless content management.
         </p>
       </div>
 
-      <div class="reviews-container">
-        <!-- Review 1 -->
-        <div class="review-card" data-aos="zoom-in" data-aos-duration="800">
-          <div class="review-text">
-            I had an awesome experience working with Ephraim Creations on my
-            website! From start to finish, the process was smooth and worth
-            the investment.
+      <div class="skill-card" data-aos="flip-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-out-back">
+        <div class="skill-icon" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <i class="fab fa-js-square"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">Advanced JavaScript</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+          Developing dynamic, high-performance interfaces using modern ES6+
+          syntax, API integrations, and modular architecture for enhanced
+          scalability.
+        </p>
+      </div>
+
+      <div class="skill-card" data-aos="flip-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-out-back">
+        <div class="skill-icon" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+          <i class="fab fa-react"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">React Ecosystem</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+          Creating interactive and efficient user experiences with React and
+          Next.js, leveraging reusable components and optimized rendering
+          techniques.
+        </p>
+      </div>
+
+      <div class="skill-card" data-aos="flip-up" data-aos-duration="800" data-aos-delay="300" data-aos-easing="ease-out-back">
+        <div class="skill-icon" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+          <i class="fab fa-node-js"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">Backend Engineering</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
+          Developing reliable server-side logic with Node.js and Express,
+          ensuring secure data flow and seamless API communication for
+          modern web applications.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <div class="section-title" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2>Comprehensive Digital Solutions</h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        End-to-end services designed to elevate your digital presence and
+        drive business growth.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-out-back">
+        <div class="service-icon" data-aos="flip" data-aos-duration="600" data-aos-delay="300">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">Web Design & Development</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+          Modern, responsive websites that convert visitors into customers
+          and deliver exceptional user experiences across all devices.
+        </p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-out-back">
+        <div class="service-icon" data-aos="flip" data-aos-duration="600" data-aos-delay="400">
+          <i class="fas fa-pen-nib"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">Content Creation</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+          Compelling content that tells your story effectively, engages your
+          audience, and drives meaningful connections with your brand.
+        </p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-out-back">
+        <div class="service-icon" data-aos="flip" data-aos-duration="600" data-aos-delay="500">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">Branding & Logo Design</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
+          Memorable brand identities that make lasting impressions and
+          communicate your unique value proposition effectively.
+        </p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300" data-aos-easing="ease-out-back">
+        <div class="service-icon" data-aos="flip" data-aos-duration="600" data-aos-delay="600">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">eBook Design</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
+          Professional digital publications that captivate readers,
+          establish authority, and generate valuable leads for your
+          business.
+        </p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400" data-aos-easing="ease-out-back">
+        <div class="service-icon" data-aos="flip" data-aos-duration="600" data-aos-delay="700">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">Digital Marketing</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="900">
+          Strategic campaigns that drive growth and engagement, leveraging
+          data-driven insights to maximize your ROI.
+        </p>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500" data-aos-easing="ease-out-back">
+        <div class="service-icon" data-aos="flip" data-aos-duration="600" data-aos-delay="800">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="900">Business Consulting</h3>
+        <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000">
+          Strategic guidance to accelerate your business growth, optimize
+          operations, and capitalize on emerging opportunities.
+        </p>
+      </div>
+    </div>
+    <div class="services-cta" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-aos-easing="ease-out-back">
+      <a href="/schedule/" class="cta-button" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="700">Start Your Project</a>
+      <a href="/services/" class="secondary-button" style="margin-left: 20px" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-title" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2>Strategic Implementations</h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        A curated selection of projects demonstrating design precision,
+        development excellence, and measurable digital impact.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      <!-- Project: Mulachap Ventures Loan Consultancy -->
+      <div class="portfolio-item" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <div class="portfolio-img" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <img src="/images/Mulachap-v-mockup.jpg" alt="Mulachap Ventures Loan Consultancy Platform" loading="lazy" />
+        </div>
+
+        <div class="portfolio-content">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">Mulachap Ventures – Loan Consultancy Platform</h3>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+            A digital loan consultancy system designed to help clients find
+            the right financing options quickly. The platform allows users
+            to submit loan applications, get eligibility assessments, and
+            connect with consultants for tailored financial advice. Built
+            with a Node.js backend and a responsive frontend for smooth user
+            experience and efficient data handling.
+          </p>
+
+          <div class="portfolio-tags" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="700">Node.js</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="750">Express</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="800">SQLite</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="850">HTML</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="900">CSS</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="950">Responsive Design</span>
           </div>
-          <div class="review-author">
-            <div class="author-avatar">N</div>
-            <div class="author-info">
-              <h4>Newton Murimi</h4>
-              <div class="review-stars">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-              <p>4 weeks ago</p>
-            </div>
+        </div>
+      </div>
+
+      <!-- Project: TechShedd E-Commerce Store -->
+      <div class="portfolio-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-out-cubic">
+        <div class="portfolio-img" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+          <img src="/images/techshedd.jpg" alt="TechShedd E-Commerce Store" loading="lazy" />
+        </div>
+
+        <div class="portfolio-content">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">TechShedd E-Commerce Store</h3>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+            A fully functional online store designed for tech enthusiasts.
+            Developed on Wix Studio with custom layouts, integrated cart and
+            checkout features, and optimized user flows for higher
+            conversions. The design emphasizes speed, responsiveness, and a
+            seamless shopping experience across all devices.
+          </p>
+
+          <div class="portfolio-tags" data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="800">Wix Studio</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="850">E-Commerce</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="900">Custom Design</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="950">UX Optimization</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="1000">SEO Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project: Luxury Car Rental Services -->
+      <div class="portfolio-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-out-cubic">
+        <div class="portfolio-img" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+          <img src="/images/cars-rent.jpg" alt="Luxury Car Rental Services Platform" loading="lazy" />
+        </div>
+
+        <div class="portfolio-content">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">Luxury Car Rental Services</h3>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
+            A sleek and dynamic car rental platform offering premium
+            vehicles for clients seeking comfort and class. The system
+            allows users to browse available cars, check pricing, and make
+            online bookings with real-time availability. Built with Node.js
+            for backend functionality and a responsive frontend using HTML,
+            CSS, and JavaScript to deliver a smooth, high-end experience.
+          </p>
+
+          <div class="portfolio-tags" data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="900">Node.js</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="950">Express</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="1000">HTML</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="1050">CSS</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="1100">JavaScript</span>
+            <span class="tag" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="1150">Responsive Design</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ Section -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <!-- Section Header -->
-      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-        <h2>Frequently Asked Questions</h2>
-        <p>
-          Get quick answers about how I work, timelines, and collaboration
-          processes.
-        </p>
+<!-- Blog Section -->
+<section id="blog">
+  <div class="container">
+    <div class="section-title" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2>Strategic Insights</h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Exploring the intersection of technology, business strategy, and user experience.</p>
+    </div>
+
+    <div class="blog-grid">
+      <!-- Blog 1 -->
+      <div class="blog-card" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+        <div class="blog-img" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <img src="/blog/assets/images/web-good.jpg" alt="What Makes a Good Website in 2025 and 2026" loading="lazy">
+        </div>
+        <div class="blog-content">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">What Makes a Good Website in 2025 and 2026?</h3>
+          <div class="blog-meta" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+            <span>Nov 2025</span>
+            <span>5 min read</span>
+          </div>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">A good website in 2025 and 2026 is fast, mobile-first, visually appealing, and built to convert. Here's what separates modern, high-performing sites from outdated ones.</p>
+          <a href="/blog/posts/post-template.html?post=what-makes-a-good-website-2025-and-2026"
+            class="read-more" data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">Continue Reading <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
 
-      <div class="faq-content">
-        <!-- FAQ Accordion -->
-        <div class="faq-accordion" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>How long does a typical website project take?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Most standard websites take about 2–4 weeks from planning to
-                launch, depending on complexity and client feedback speed.
-              </p>
-            </div>
+      <!-- Blog 2 -->
+      <div class="blog-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-out-cubic">
+        <div class="blog-img" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+          <img src="/blog/assets/images/web-visitor.jpg" alt="How a Well-Designed Website Builds Trust" loading="lazy">
+        </div>
+        <div class="blog-content">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">How a Well-Designed Website Builds Trust and Converts Visitors into Clients</h3>
+          <div class="blog-meta" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+            <span> Nov 2025</span>
+            <span>6 min read</span>
           </div>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">Your website is often the first impression potential clients get. A well-designed website builds trust, reflects professionalism, and turns curious visitors into loyal customers.</p>
+          <a href="/blog/posts/post-template.html?post=how-a-well-designed-website-builds-trust-and-converts-visitors"
+            class="read-more" data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">Continue Reading <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Do you offer website maintenance after launch?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Yes. I provide ongoing maintenance and updates to ensure your
-                website stays secure, optimized, and up to date.
-              </p>
-            </div>
+      <!-- Blog 3 -->
+      <div class="blog-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-out-cubic">
+        <div class="blog-img" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+          <img src="/blog/assets/images/web-cheap.jpg" alt="The Hidden Costs of a Cheap Website" loading="lazy">
+        </div>
+        <div class="blog-content">
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">The Hidden Costs of a Cheap Website</h3>
+          <div class="blog-meta" data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
+            <span>Nov 2025</span>
+            <span>7 min read</span>
           </div>
+          <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">A cheap website may seem like a good deal, but poor performance, downtime, and weak SEO can cost far more over time. Here's what most people don't realize about budget websites.</p>
+          <a href="/blog/posts/post-template.html?post=the-hidden-costs-of-a-cheap-website" class="read-more" data-aos="fade-up" data-aos-duration="600" data-aos-delay="900">Continue Reading <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Can you redesign an existing website?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Absolutely. I can audit your current site and give it a fresh,
-                high-performing redesign while keeping your brand identity
-                intact.
-              </p>
-            </div>
-          </div>
+<!-- Reviews Section -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-title" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2>Client Success Stories</h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        Partnerships that have driven measurable business transformation.
+      </p>
+    </div>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What's required to get started?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Once we discuss your goals, I'll send a detailed proposal. A
-                50% deposit confirms your slot, then we begin design and
-                development.
-              </p>
+    <div class="reviews-container">
+      <!-- Review 1 -->
+      <div class="review-card" data-aos="flip-left" data-aos-duration="800" data-aos-easing="ease-out-back">
+        <div class="review-text" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          I had an awesome experience working with Ephraim Creations on my
+          website! From start to finish, the process was smooth and worth
+          the investment.
+        </div>
+        <div class="review-author">
+          <div class="author-avatar" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">N</div>
+          <div class="author-info">
+            <h4 data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">Newton Murimi</h4>
+            <div class="review-stars" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
             </div>
+            <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">6 weeks ago</p>
+            <small data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">verified Google review</small>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- CTA Section -->
-        <div class="faq-cta" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-          <div class="cta-card">
-            <h3>Ready to bring your vision to life?</h3>
+<!-- FAQ Section -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-title" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2>Frequently Asked Questions</h2>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        Get quick answers about how I work, timelines, and collaboration
+        processes.
+      </p>
+    </div>
+
+    <div class="faq-content">
+      <!-- FAQ Accordion -->
+      <div class="faq-accordion" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300" data-aos-easing="ease-out-cubic">
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+          <button class="faq-question">
+            <span>How long does a typical website project take?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
             <p>
-              Let's discuss your project goals and how I can help you achieve
-              them efficiently and beautifully.
+              Most standard websites take about 2–4 weeks from planning to
+              launch, depending on complexity and client feedback speed.
             </p>
-            <a href="/pricing/" class="faq-cta-button">
-              <span>Start Your Project</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+          <button class="faq-question">
+            <span>Do you offer website maintenance after launch?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. I provide ongoing maintenance and updates to ensure your
+              website stays secure, optimized, and up to date.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+          <button class="faq-question">
+            <span>Can you redesign an existing website?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Absolutely. I can audit your current site and give it a fresh,
+              high-performing redesign while keeping your brand identity
+              intact.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
+          <button class="faq-question">
+            <span>What's required to get started?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Once we discuss your goals, I'll send a detailed proposal. A
+              50% deposit confirms your slot, then we begin design and
+              development.
+            </p>
           </div>
         </div>
       </div>
+
+      <!-- CTA Section -->
+      <div class="faq-cta" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400" data-aos-easing="ease-out-cubic">
+        <div class="cta-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+          <h3>Ready to bring your vision to life?</h3>
+          <p>
+            Let's discuss your website project goals and how I can help you achieve
+            them efficiently and beautifully.
+          </p>
+          <a href="/pricing/" class="faq-cta-button" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+            <span>Start Your Project</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- CTA Section not useful -->
 
@@ -815,7 +699,8 @@
           <h3>Connect</h3>
           <ul>
             <li>
-              <a href="mailto:info@ephraimworks.online"><i class="fas fa-envelope"></i>info@ephraimworks.online</a>
+              <a href="mailto:info@ephraimcreations.co.ke"><i
+                  class="fas fa-envelope"></i>info@ephraimcreations.co.ke</a>
             </li>
             <li>
               <a href="tel:+254112268873"><i class="fas fa-phone"></i> +254 112 268 873

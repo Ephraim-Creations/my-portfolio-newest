@@ -1,202 +1,142 @@
-// WhatsApp Configuration - REPLACE WITH YOUR ACTUAL WHATSAPP NUMBER
-const WHATSAPP_NUMBER = '112268873'; // Format: country code + number (no spaces or symbols)
-const COUNTRY_CODE = '254'; // Your country code
+   let currentStep = 1;
+    const totalSteps = 3;
 
-class BookingForm {
-  constructor() {
-    this.form = document.getElementById('bookingForm');
-    this.successMessage = document.getElementById('successMessage');
-    this.submitBtn = this.form.querySelector('.submit-btn');
-    this.btnText = this.submitBtn.querySelector('.btn-text');
-    this.btnLoading = this.submitBtn.querySelector('.btn-loading');
-    
-    this.init();
-  }
-  
-  init() {
-    this.form.addEventListener('submit', this.handleSubmit.bind(this));
-    this.setMinDate();
-  }
-  
-  setMinDate() {
-    const dateInput = document.getElementById('date');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.min = today;
-  }
-  
-  async handleSubmit(e) {
-    e.preventDefault();
-    
-    if (!this.validateForm()) {
-      return;
+    // Check for success parameter in URL
+    if (window.location.search.includes('success=true')) {
+        document.querySelector('.booking-form').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        document.querySelectorAll('.progress-step').forEach(step => step.classList.add('active'));
     }
-    
-    this.setLoading(true);
-    
-    try {
-      const formData = this.getFormData();
-      await this.sendToWhatsApp(formData);
-      this.showSuccess();
-      this.form.reset();
-    } catch (error) {
-      console.error('Error sending booking:', error);
-      alert('There was an error submitting your booking. Please try again.');
-    } finally {
-      this.setLoading(false);
+
+    function nextStep() {
+        // Validate current step before proceeding
+        if (!validateStep(currentStep)) {
+            return;
+        }
+
+        if (currentStep < totalSteps) {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            currentStep++;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            updateProgressIndicator();
+        }
     }
-  }
-  
-  validateForm() {
-    const requiredFields = this.form.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-      if (!field.value.trim()) {
-        this.showError(field, 'This field is required');
-        isValid = false;
-      } else {
-        this.clearError(field);
-      }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            updateProgressIndicator();
+        }
+    }
+
+    function updateProgressIndicator() {
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            if (index + 1 <= currentStep) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
+    }
+
+    function validateStep(stepNumber) {
+        const stepElement = document.getElementById(`step${stepNumber}`);
+        const requiredInputs = stepElement.querySelectorAll('[required]');
+        let isValid = true;
+
+        // Clear previous error messages
+        stepElement.querySelectorAll('.error-message').forEach(el => el.remove());
+
+        for (const input of requiredInputs) {
+            if (!input.value.trim()) {
+                showError(input, 'This field is required');
+                isValid = false;
+            } else if (input.type === 'email' && !isValidEmail(input.value)) {
+                showError(input, 'Please enter a valid email address');
+                isValid = false;
+            }
+        }
+
+        // Validate radio groups
+        const radioGroups = stepElement.querySelectorAll('.contact-options, .service-categories, .time-options');
+        for (const group of radioGroups) {
+            const radioName = group.querySelector('input[type="radio"]').name;
+            const selected = stepElement.querySelector(`input[name="${radioName}"]:checked`);
+            if (!selected) {
+                const firstLabel = group.querySelector('label');
+                showError(firstLabel, 'Please select an option');
+                isValid = false;
+            }
+        }
+
+        if (!isValid) {
+            // Scroll to first error
+            const firstError = stepElement.querySelector('.error-message');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        return isValid;
+    }
+
+    function showError(input, message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        errorDiv.style.color = '#ef4444';
+        errorDiv.style.fontSize = '0.85rem';
+        errorDiv.style.marginTop = '4px';
+        errorDiv.style.fontWeight = '500';
+        
+        // Insert after the input or its container
+        const parent = input.closest('.form-group') || input.parentNode;
+        parent.appendChild(errorDiv);
+        
+        // Add error styling to input
+        input.style.borderColor = '#ef4444';
+        input.addEventListener('input', function() {
+            this.style.borderColor = '';
+            errorDiv.remove();
+        }, { once: true });
+    }
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Form submission handling
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        // Validate all steps before submission
+        for (let i = 1; i <= totalSteps; i++) {
+            if (!validateStep(i)) {
+                e.preventDefault();
+                // Go to first step with error
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep = i;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                updateProgressIndicator();
+                return;
+            }
+        }
+
+        // Show loading state
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'flex';
+        submitBtn.disabled = true;
+        
+        // Form will submit normally to FormSubmit.co
     });
-    
-    // Email validation
-    const emailField = document.getElementById('email');
-    if (emailField.value && !this.isValidEmail(emailField.value)) {
-      this.showError(emailField, 'Please enter a valid email address');
-      isValid = false;
-    }
-    
-    // Phone validation
-    const phoneField = document.getElementById('phone');
-    if (phoneField.value && !this.isValidPhone(phoneField.value)) {
-      this.showError(phoneField, 'Please enter a valid phone number');
-      isValid = false;
-    }
-    
-    return isValid;
-  }
-  
-  isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-  
-  isValidPhone(phone) {
-    // Basic phone validation - adjust as needed
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
-  }
-  
-  showError(field, message) {
-    this.clearError(field);
-    
-    const errorElement = document.createElement('div');
-    errorElement.className = 'error-message';
-    errorElement.style.color = '#ef4444';
-    errorElement.style.fontSize = '0.875rem';
-    errorElement.style.marginTop = '5px';
-    errorElement.textContent = message;
-    
-    field.style.borderColor = '#ef4444';
-    field.parentNode.appendChild(errorElement);
-  }
-  
-  clearError(field) {
-    field.style.borderColor = '';
-    const existingError = field.parentNode.querySelector('.error-message');
-    if (existingError) {
-      existingError.remove();
-    }
-  }
-  
-  getFormData() {
-    return {
-      firstName: document.getElementById('firstName').value,
-      lastName: document.getElementById('lastName').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      service: document.getElementById('service').value,
-      date: document.getElementById('date').value,
-      time: document.getElementById('time').value,
-      message: document.getElementById('message').value
-    };
-  }
-  
-  async sendToWhatsApp(formData) {
-    const message = this.formatMessage(formData);
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${COUNTRY_CODE}${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-    
-    // Open WhatsApp in a new tab
-    window.open(whatsappUrl, '_blank');
-    
-    // Simulate API call delay for better UX
-    return new Promise(resolve => setTimeout(resolve, 2000));
-  }
-  
-  formatMessage(formData) {
-    const formattedDate = new Date(formData.date).toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+
+    // Auto-scroll to success message if success parameter exists
+    window.addEventListener('load', function() {
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        }
     });
-    
-    return `📅 New Scheduled consultaion
-
-👤 Customer Information:
-• Name: ${formData.firstName} ${formData.lastName}
-• Email: ${formData.email}
-• Phone: ${formData.phone}
-
-📋 Service Details:
-• Service: ${formData.service}
-• Preferred Date: ${formattedDate}
-• Preferred Time: ${formData.time}
-
-💬 Additional Message:
-${formData.message || 'No additional message'}
-
----
-This booking was submitted via website form.`;
-  }
-  
-  setLoading(loading) {
-    if (loading) {
-      this.btnText.style.display = 'none';
-      this.btnLoading.style.display = 'block';
-      this.submitBtn.disabled = true;
-    } else {
-      this.btnText.style.display = 'block';
-      this.btnLoading.style.display = 'none';
-      this.submitBtn.disabled = false;
-    }
-  }
-  
-  showSuccess() {
-    this.form.style.display = 'none';
-    this.successMessage.style.display = 'block';
-    
-    // Auto-hide success message after 5 seconds and show form again
-    setTimeout(() => {
-      this.successMessage.style.display = 'none';
-      this.form.style.display = 'flex';
-    }, 5000);
-  }
-}
-
-// Initialize the booking form when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  new BookingForm();
-});
-
-// Additional utility function for phone number formatting
-function formatPhoneNumber(phone) {
-  const cleaned = phone.replace(/\D/g, '');
-  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-  if (match) {
-    return '(' + match[1] + ') ' + match[2] + '-' + match[3];
-  }
-  return phone;
-}
-
